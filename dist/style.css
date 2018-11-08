@@ -13,5 +13,6 @@ body {
 }
 
 .background {
-  background-image: url(../assets/images/app-bg-1.png;)
+  background-image: url(assets/images/app-bg-1.png);
+  background-color: black;
 }
