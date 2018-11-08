@@ -15,7 +15,6 @@ function renderNewUser(){
         <label>Nome: </label>
         <br>
         <input type="text" name="Name" placeholder="Nome completo">
-<<<<<<< HEAD
         <br>
         <label>CPF: </label>
         <br>
@@ -23,11 +22,6 @@ function renderNewUser(){
         <br>
         <button class="form-button" type="submit" placeholder="Submit"><a href="/newuser/myinformations">Consultar</a></button>
       </form>
-=======
-        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="14" OnKeyPress="format('###.###.###-##', this)">
-        <button onclick="verifyCPF()" type="submit" value="Submit"><a href="/newuser/myinformations">Consultar</a></button>
-      </div>
->>>>>>> cd41a1c3876eab7036aa84652163df8751bef448
     </div>
   `
 }
