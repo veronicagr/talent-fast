@@ -8,30 +8,54 @@ function renderIndex(){
 
 function renderNewUser(){
   return `
-    <div>
+    <div form-container>
       <h3>Junte-se a nós</h3>
-      <div class="#">
+      <form class="#">
         <p>Crie sua conta</p>
+        <label>Nome: </label>
+        <br>
         <input type="text" name="Name" placeholder="Nome completo">
+        <br>
+        <label>CPF: </label>
+        <br>
         <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
-        <button type="submit" value="Submit"><a href="/newuser/myinformations">Consultar</a></button>
-      </div>
+        <br>
+        <button class="form-button" type="submit" placeholder="Submit"><a href="/newuser/myinformations">Consultar</a></button>
+      </form>
     </div>
   `
 }
 
 function renderMyInformations(){
   return `
-    <div class="#">
+    <div class="form-container">
       <p>Complete seu cadastro</p>
       <form class="#">
-        Nascimento: <input type="date" value="date">
-        Estado Civil: <input type="text" value="estado civil">
-        Numero de Celular: <input type="number" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
-        RG: <input type="text" value="rg number" maxlength="14">
-        Orgão Emissor: <input type="text" value="Orgão Emissor do RG">
-        Estado Emissor: <input type="text" value="Estado Emissor">
-        <button type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
+        <label>Nascimento: </label>
+        <br>
+        <input type="date" placeholder="">
+        <br>
+        <label>Estado Civil: </label>
+        <br>
+        <input type="text" placeholder="">
+        <br>
+        <label>Celular: </label>
+        <br>
+        <input type="number" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
+        <br>
+        <label>RG: </label>
+        <br>
+        <input type="text" placeholder="" maxlength="14">
+        <br>
+        <label>Órgão Emissor: </label>
+        <br>
+        <input type="text" placeholder="">
+        <br>
+        <label>Estado Emissor: </label>
+        <br>
+        <input type="text" placeholder="">
+        <br>
+        <button class="form-button" type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
       </form>
     </div>
   `
@@ -69,6 +93,8 @@ function renderMyAdress (){
       <label>Estado: </label>
       <br>
       <input type="text">
+      <br>
+      <button class="form-button" type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
     </form>
   </div>
   `
