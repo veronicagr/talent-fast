@@ -10,8 +10,10 @@ page('/employees/pending', pendingClient);
 page('/employees/approved', approvedClient);
 page();
 
+$(document).ready(index);
+
 function index(){
-  //vai retornar um bem-vindo!
+  $("#main").html(renderIndex());
 }
 
 function newuser(){
