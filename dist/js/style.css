@@ -1,0 +1,17 @@
+/* Configurações gerais */
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+  height: 100vh;
+  background-color: #F4F0F0;
+  font-family: 'Inconsolata', monospace;
+}
+
+.background {
+  background-image: url(../assets/images/app-bg-1.png;)
+}

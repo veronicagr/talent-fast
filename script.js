@@ -1,8 +1,14 @@
 page('/', index);
+<<<<<<< HEAD
+page('/newuser', newuser);
+page('/newuser/myinformations', myInformations);
+page('/newuser/myadress', myAdress);
+=======
 page('/newuser', newUser);
 page('/newuser/myinformations', myInformations);
 page('/newuser/myadress', myAdress);
 page('/newuser/myincome');
+>>>>>>> b9b11e4ce91908718ed224d21472f95626ea792b
 page('/newuser/docvalidation', docValidation);
 page('/newuser/limit', limitAccount);
 page('/login', loginUser);
@@ -11,6 +17,14 @@ page('/employees/pending', pendingClient);
 page('/employees/approved', approvedClient);
 page();
 
+<<<<<<< HEAD
+function index(){
+  //vai retornar um bem-vindo!
+}
+
+function newuser(){
+  //o input de nome e cpf
+=======
 $(document).ready(index);
 
 function index(){
@@ -19,6 +33,7 @@ function index(){
 
 function newUser(){
   $("#main").html(renderNewUser());
+>>>>>>> b9b11e4ce91908718ed224d21472f95626ea792b
 }
 
 function myInformations(){
