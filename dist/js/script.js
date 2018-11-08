@@ -1,7 +1,8 @@
 page('/', index);
-page('/newuser', newuser);
+page('/newuser', newUser);
 page('/newuser/myinformations', myInformations);
 page('/newuser/myadress', myAdress);
+page('/newuser/myincome');
 page('/newuser/docvalidation', docValidation);
 page('/newuser/limit', limitAccount);
 page('/login', loginUser);
@@ -10,19 +11,14 @@ page('/employees/pending', pendingClient);
 page('/employees/approved', approvedClient);
 page();
 
-<<<<<<< HEAD:dist/js/script.js
-function index() {
-  //vai retornar um bem-vindo!
-=======
 $(document).ready(index);
 
 function index(){
   $("#main").html(renderIndex());
->>>>>>> master:script.js
 }
 
-function newuser() {
-  //o input de nome e cpf
+function newUser(){
+  $("#main").html(renderNewUser());
 }
 
 function myInformations() {
