@@ -18,17 +18,14 @@ function index(){
 }
 
 function newUser(){
-  event.preventDefault();
   $("#main").html(renderNewUser());
 }
 
 function myInformations() {
-  event.preventDefault();
   $("#main").html(renderMyInformations());
 }
 
 function myAdress() {
-  event.preventDefault();
   $("#main").html(renderMyAdress());
 }
 

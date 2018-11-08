@@ -1,5 +1,9 @@
 function renderIndex(){
-
+  return `
+    <div class="#">
+      <p>Bem Vind@ ao Future Bank, abra a sua conta on-line e confie em nós para cuidar de seus investimentos.</p>
+    </div>
+  `
 }
 
 function renderNewUser(){
@@ -9,7 +13,7 @@ function renderNewUser(){
       <div class="#">
         <p>Crie sua conta</p>
         <input type="text" name="Name" placeholder="Nome completo">
-        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="11">
+        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
         <button type="submit" value="Submit"><a href="/newuser/myinformations">Consultar</a></button>
       </div>
     </div>
@@ -23,7 +27,7 @@ function renderMyInformations(){
       <form class="#">
         Nascimento: <input type="date" value="date">
         Estado Civil: <input type="text" value="estado civil">
-        Numero de Celular: <input type="number" value="" maxlength="10">
+        Numero de Celular: <input type="number" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
         RG: <input type="text" value="rg number" maxlength="14">
         Orgão Emissor: <input type="text" value="Orgão Emissor do RG">
         Estado Emissor: <input type="text" value="Estado Emissor">
@@ -40,7 +44,7 @@ function renderMyAdress (){
     <form class="#">
       <label>CEP: </label>
       <br>
-      <input type="number" maxlength="8" placeholder="00000000" onblur="verifyCPF()">
+      <input type="number" name="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)" onblur="verifyCPF()">
       <br>
       <label>Rua: </label>
       <br>
