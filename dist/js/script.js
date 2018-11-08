@@ -1,14 +1,8 @@
 page('/', index);
-<<<<<<< HEAD
-page('/newuser', newuser);
-page('/newuser/myinformations', myInformations);
-page('/newuser/myadress', myAdress);
-=======
 page('/newuser', newUser);
 page('/newuser/myinformations', myInformations);
 page('/newuser/myadress', myAdress);
 page('/newuser/myincome');
->>>>>>> b9b11e4ce91908718ed224d21472f95626ea792b
 page('/newuser/docvalidation', docValidation);
 page('/newuser/limit', limitAccount);
 page('/login', loginUser);
@@ -17,14 +11,6 @@ page('/employees/pending', pendingClient);
 page('/employees/approved', approvedClient);
 page();
 
-<<<<<<< HEAD
-function index(){
-  //vai retornar um bem-vindo!
-}
-
-function newuser(){
-  //o input de nome e cpf
-=======
 $(document).ready(index);
 
 function index(){
@@ -33,37 +19,36 @@ function index(){
 
 function newUser(){
   $("#main").html(renderNewUser());
->>>>>>> b9b11e4ce91908718ed224d21472f95626ea792b
 }
 
-function myInformations(){
+function myInformations() {
   //mais dados são requisitados do usuario, como nascimento, estado civil...
 }
 
-function myAdress(){
+function myAdress() {
   //input do endereço
 }
 
-function docValidation(){
+function docValidation() {
   //validação do documento com foto
 }
 
-function limitAccount(){
+function limitAccount() {
   //retorna o limite aprovado
 }
 
-function loginUser(){
+function loginUser() {
   //retorna uma pagina para os clientes entrarem
 }
 
-function loginEmployees(){
+function loginEmployees() {
   //pagina de login de acesso ao gerente
 }
 
-function pendingClient(){
+function pendingClient() {
   //depois de ja logado a pagina exibe os clientes que estão pendentes para a aprovação
 }
 
-function approvedClient(){
+function approvedClient() {
   //retorna os clientes já aprovados pelo gerente
 }
