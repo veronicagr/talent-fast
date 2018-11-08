@@ -1,7 +1,8 @@
 page('/', index);
-page('/newuser', newuser);
+page('/newuser', newUser);
 page('/newuser/myinformations', myInformations);
 page('/newuser/myadress', myAdress);
+page('/newuser/myincome');
 page('/newuser/docvalidation', docValidation);
 page('/newuser/limit', limitAccount);
 page('/login', loginUser);
@@ -16,8 +17,8 @@ function index(){
   $("#main").html(renderIndex());
 }
 
-function newuser(){
-  //o input de nome e cpf
+function newUser(){
+  $("#main").html(renderNewUser());
 }
 
 function myInformations(){
