@@ -19,6 +19,7 @@ function loadCPF(data) {
   });
 }
 
+
 // function cpfRequest() {
 //   const url = 'https://raw.githubusercontent.com/adrianosferreira/afrodite.json/master/afrodite.json';
 //
@@ -39,12 +40,12 @@ function loadCPF(data) {
 //   });
 // }
 
-function formatar(mascara, documento) {
-  let i = documento.value.length;
-  let saida = mascara.substring(0,1);
-  let texto = mascara.substring(i);
+function formatar(mascara, documento){
+  var i = documento.value.length;
+  var saida = mascara.substring(0,1);
+  var texto = mascara.substring(i);
 
-  if (texto.substring(0,1) != saida) {
-    documento.value += texto.substring(0,1);
+  if (texto.substring(0,1) != saida){
+            documento.value += texto.substring(0,1);
   }
 }
