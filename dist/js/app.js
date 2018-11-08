@@ -1,10 +1,10 @@
+const validarCpf = require('validar-cpf');
 
-const cpfValidate = require('validar-cpf');
-const numberCPF = $('#cpf');
-
-// function validator(numberCPF) {
-//   return cpfValidate(numberCPF);
-// }
+function verifyCPF() {
+  let numberCPF = $('#cpf').val();
+  console.log(numberCPF);
+  console.log(validarCpf(numberCPF));
+}
 
 // function cpfRequest() {
 //   const url = 'https://raw.githubusercontent.com/adrianosferreira/afrodite.json/master/afrodite.json';
@@ -26,13 +26,13 @@ const numberCPF = $('#cpf');
 //   });
 // }
 
-function formatar(mascara, documento){
-  var i = documento.value.length;
-  var saida = mascara.substring(0,1);
-  var texto = mascara.substring(i);
+function format(mask, doc){
+  let i = doc.value.length;
+  let out = mask.substring(0,1);
+  let txt = mask.substring(i);
 
-  if (texto.substring(0,1) != saida){
-            documento.value += texto.substring(0,1);
+  if (txt.substring(0,1) != out){
+      doc.value += txt.substring(0,1);
   }
 
 }

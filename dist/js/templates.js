@@ -13,8 +13,8 @@ function renderNewUser(){
       <div class="#">
         <p>Crie sua conta</p>
         <input type="text" name="Name" placeholder="Nome completo">
-        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
-        <button type="submit" value="Submit"><a href="/newuser/myinformations">Consultar</a></button>
+        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="14" OnKeyPress="format('###.###.###-##', this)">
+        <button onclick="verifyCPF()" type="submit" value="Submit"><a href="/newuser/myinformations">Consultar</a></button>
       </div>
     </div>
   `
@@ -25,12 +25,12 @@ function renderMyInformations(){
     <div class="#">
       <p>Complete seu cadastro</p>
       <form class="#">
-        Nascimento: <input type="date" value="date">
-        Estado Civil: <input type="text" value="estado civil">
-        Numero de Celular: <input type="number" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
-        RG: <input type="text" value="rg number" maxlength="14">
-        Orgão Emissor: <input type="text" value="Orgão Emissor do RG">
-        Estado Emissor: <input type="text" value="Estado Emissor">
+        Nascimento: <input type="date">
+        Estado Civil: <input type="text">
+        Numero de Celular: <input type="number" maxlength="12" OnKeyPress="format('##-####-####', this)">
+        RG: <input type="text" maxlength="14">
+        Orgão Emissor: <input type="text">
+        Estado Emissor: <input type="text">
         <button type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
       </form>
     </div>
@@ -44,7 +44,7 @@ function renderMyAdress (){
     <form class="#">
       <label>CEP: </label>
       <br>
-      <input type="number" name="cep" maxlength="9" OnKeyPress="formatar('#####-###', this)" onblur="verifyCPF()">
+      <input type="number" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)" onblur="verifyCPF(this)">
       <br>
       <label>Rua: </label>
       <br>
