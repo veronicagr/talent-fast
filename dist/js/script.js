@@ -2,7 +2,7 @@ page('/', index);
 page('/newuser', newUser);
 page('/newuser/myinformations', myInformations);
 page('/newuser/myadress', myAdress);
-page('/newuser/myincome');
+page('/newuser/myincome', myIncome);
 page('/newuser/docvalidation', docValidation);
 page('/newuser/limit', limitAccount);
 page('/login', loginUser);
@@ -23,11 +23,17 @@ function newUser(){
 }
 
 function myInformations() {
+  event.preventDefault();
   $("#main").html(renderMyInformations());
 }
 
 function myAdress() {
-  //input do endereço
+  event.preventDefault();
+  $("#main").html(renderMyAdress());
+}
+
+function myIncome(){
+  event.preventDefault();
 }
 
 function docValidation() {

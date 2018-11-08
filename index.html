@@ -8,7 +8,7 @@
   </head>
   <body class="background">
     <nav>
-      <h1 href="/" >Future Bank</h1>
+      <h1><a  href="/">Future Bank</a></h1>
       <div class="#">
         <a type="button" name="button new account" href="/newuser"><i class="fas fa-user-plus"></i>Nova conta</a>
         <a type="button" name="button login user" href="/login"><i class="fas fa-user-lock"></i>Acesso a conta</a>
@@ -17,8 +17,16 @@
      </nav>
     <main id="main">
       <div class="#">
-        <p>Complete seu cadastro</p>
-
+        <p>Meu Endereço</p>
+        <form class="#">
+          CEP: <input type="number" maxlength="8" placeholder="00000000" onblur="verifyCPF()">
+          Rua: <input type="text" placeholder="Av, Rua...">
+          Numero: <input type="text">
+          Complemento: <input type="text" placeholder="ap, bloco...">
+          Bairro: <input type="text">
+          Cidade: <input type="text">
+          Estado: <input type="text">
+        </form>
       </div>
       <!-- main vai ser construida dinamicamente atravez do Pages.js -->
     </main>
