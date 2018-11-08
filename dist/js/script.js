@@ -18,11 +18,12 @@ function index(){
 }
 
 function newUser(){
+  event.preventDefault();
   $("#main").html(renderNewUser());
 }
 
 function myInformations() {
-  //mais dados são requisitados do usuario, como nascimento, estado civil...
+  $("#main").html(renderMyInformations());
 }
 
 function myAdress() {
