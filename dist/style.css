@@ -79,6 +79,11 @@ input {
   padding: 5px;
 }
 
+::placeholder {
+  color: grey;
+  font-family: 'Inconsolata', monospace;
+}
+
 .logo {
   width: 200px;
   height: 100px;
@@ -87,4 +92,18 @@ input {
 .hr-header {
   width: 80%;
   border: 2px solid black;
+}
+
+.form-button {
+  background-color: rgb(32, 32, 32); 
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 14px;
+  width: 100%;
+  border: none;
+  margin-top: 15px;
+}
+
+label {
+  margin-top: 5px;
 }
