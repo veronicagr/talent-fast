@@ -9,7 +9,7 @@ function renderNewUser(){
       <div class="#">
         <p>Crie sua conta</p>
         <input type="text" name="Name" placeholder="Nome completo">
-        <input type="text" name="CPF" placeholder="CPF" maxlength="11">
+        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="11">
         <button type="submit" value="Submit"><a href="/newuser/myinformations">Consultar</a></button>
       </div>
     </div>
@@ -34,18 +34,38 @@ function renderMyInformations(){
 }
 function renderMyAdress (){
   return`
-    <div class="#">
-      <p>Meu Endereço</p>
-      <form class="#">
-        CEP: <input type="number" maxlength="8" placeholder="00000000" onblur="verifyCPF()">
-        Rua: <input type="text" placeholder="Av, Rua...">
-        Numero: <input type="text">
-        Complemento: <input type="text" placeholder="ap, bloco...">
-        Bairro: <input type="text">
-        Cidade: <input type="text">
-        Estado: <input type="text">
-        <button type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
-      </form>
-    </div>
+  <div class="progress">point</div>
+  <div class="form-container">
+    <p>Meu Endereço</p>
+    <form class="#">
+      <label>CEP: </label>
+      <br>
+      <input type="number" maxlength="8" placeholder="00000000" onblur="verifyCPF()">
+      <br>
+      <label>Rua: </label>
+      <br>
+      <input type="text" placeholder="Av, Rua...">
+      <br>
+      <label>Número: </label>
+      <br>
+      <input type="text">
+      <br>
+      <label>Complemento: </label>
+      <br>
+      <input type="text" placeholder="ap, bloco...">
+      <br>
+      <label>Bairro: </label>
+      <br>
+      <input type="text">
+      <br>
+      <label>Cidade: </label>
+      <br>
+      <input type="text">
+      <br>
+      <label>Estado: </label>
+      <br>
+      <input type="text">
+    </form>
+  </div>
   `
 }
