@@ -7,30 +7,52 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
   <body class="background">
-    <nav>
-      <h1><a  href="/">Future Bank</a></h1>
+    <header class="header">
+    </header>
+    <nav class="navbar">
       <div class="#">
-        <a type="button" name="button new account" href="/newuser"><i class="fas fa-user-plus"></i>Nova conta</a>
-        <a type="button" name="button login user" href="/login"><i class="fas fa-user-lock"></i>Acesso a conta</a>
-        <a type="button" name="button employees acess" href="/employees"><i class="fas fa-lock"></i>Acesso funcionários</a>
+        <a type="button" class="nav-button" name="button new account" href="/newuser"><i class="icon fas fa-user-plus"></i>Nova conta</a>
+        <a type="button" class="nav-button" name="button login user" href="/login"><i class="icon fas fa-user-lock"></i>Acesso a conta</a>
+        <a type="button" class="nav-button" name="button employees acess" href="/employees"><i class="icon fas fa-lock"></i>Acesso funcionários</a>
       </div>
      </nav>
-    <main id="main">
-      <div class="#">
+    <main class="main" id="main">
+      <div class="progress">point</div>
+      <div class="form-container">
         <p>Meu Endereço</p>
         <form class="#">
-          CEP: <input type="number" maxlength="8" placeholder="00000000" onblur="verifyCPF()">
-          Rua: <input type="text" placeholder="Av, Rua...">
-          Numero: <input type="text">
-          Complemento: <input type="text" placeholder="ap, bloco...">
-          Bairro: <input type="text">
-          Cidade: <input type="text">
-          Estado: <input type="text">
+          <label>CEP: </label>
+          <br>
+          <input type="number" maxlength="8" placeholder="00000000" onblur="verifyCPF()">
+          <br>
+          <label>Rua: </label>
+          <br>
+          <input type="text" placeholder="Av, Rua...">
+          <br>
+          <label>Número: </label>
+          <br>
+          <input type="text">
+          <br>
+          <label>Complemento: </label>
+          <br>
+          <input type="text" placeholder="ap, bloco...">
+          <br>
+          <label>Bairro: </label>
+          <br>
+          <input type="text">
+          <br>
+          <label>Cidade: </label>
+          <br>
+          <input type="text">
+          <br>
+          <label>Estado: </label>
+          <br>
+          <input type="text">
         </form>
       </div>
       <!-- main vai ser construida dinamicamente atravez do Pages.js -->
     </main>
-    <footer>
+    <footer class="footer">
       <p>©Copyright 2050 by nobody. All rights reversed.</p>
     </footer>
     <script
