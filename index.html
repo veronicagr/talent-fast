@@ -3,28 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>My page title</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/dist/style.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
   </head>
   <body class="background">
-    <nav>
-      <h1 href="/" >Future Bank</h1>
-      <div class="#">
-        <a type="button" name="button new account" href="/newuser"><i class="fas fa-user-plus"></i>Nova conta</a>
-        <a type="button" name="button login user" href="/login"><i class="fas fa-user-lock"></i>Acesso a conta</a>
-        <a type="button" name="button employees acess" href="/employees"><i class="fas fa-lock"></i>Acesso funcionários</a>
-      </div>
-     </nav>
-    <main id="main">
-      <div class="#">
-        <p>Complete seu cadastro</p>
-
-      </div>
-      <!-- main vai ser construida dinamicamente atravez do Pages.js -->
-    </main>
-    <footer>
-      <p>©Copyright 2050 by nobody. All rights reversed.</p>
-    </footer>
+      <nav class="navbar">
+          <a type="button" name="button new account" href="/newuser"><i class="fas fa-user-plus"></i>Nova conta</a>
+          <a type="button" name="button login user" href="/login"><i class="fas fa-user-lock"></i>Acesso a conta</a>
+          <a type="button" name="button employees acess" href="/employees"><i class="fas fa-lock"></i>Acesso funcionários</a>
+      </nav>
+      <main class="main" id="main">
+          <p>Complete seu cadastro</p>
+        <!-- main vai ser construida dinamicamente atravez do Pages.js -->
+      </main>
+      <footer class="footer">
+        <p>©Copyright 2050 by nobody. All rights reversed.</p>
+      </footer>
     <script
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="

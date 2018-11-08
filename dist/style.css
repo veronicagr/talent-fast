@@ -7,12 +7,31 @@
 
 body {
   margin: 0 auto;
-  height: 100vh;
-  background-color: #F4F0F0;
-  font-family: 'Inconsolata', monospace;
 }
 
 .background {
-  background-image: url(assets/images/app-bg-1.png);
-  background-color: black;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Inconsolata', monospace;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 20% 60% 20%;
+  grid-template-areas: 
+    "navbar",
+    "main",
+    "footer";
+    background-image: url("assets/images/app-bg-1.png");
+    background-size: 100% 100%; 
+}
+
+.navbar {
+  grid-area: navbar;
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
 }
