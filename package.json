@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/veronicagr/talent-fast#readme",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.16.4",
+    "validar-cpf": "^2.0.2"
   }
 }
