@@ -6,6 +6,20 @@ const numberCPF = $('#cpf');
 //   return cpfValidate(numberCPF);
 // }
 
+function cpfRequest() {
+  return fetch('https://talent-fest-e8129.firebaseio.com/consultaCPF.json')
+    .then(response => response.json())
+    .then(json => json)
+    .catch(error => handleError(error));
+};
+
+function loadCPF(data) {
+  $.each(data, function(index, value) {
+
+  });
+}
+
+
 // function cpfRequest() {
 //   const url = 'https://raw.githubusercontent.com/adrianosferreira/afrodite.json/master/afrodite.json';
 //
@@ -34,5 +48,4 @@ function formatar(mascara, documento){
   if (texto.substring(0,1) != saida){
             documento.value += texto.substring(0,1);
   }
-
 }
