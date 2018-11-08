@@ -21,34 +21,34 @@ function newUser(){
   $("#main").html(renderNewUser());
 }
 
-function myInformations() {
+function myInformations(){
   //mais dados são requisitados do usuario, como nascimento, estado civil...
 }
 
-function myAdress() {
+function myAdress(){
   //input do endereço
 }
 
-function docValidation() {
+function docValidation(){
   //validação do documento com foto
 }
 
-function limitAccount() {
+function limitAccount(){
   //retorna o limite aprovado
 }
 
-function loginUser() {
+function loginUser(){
   //retorna uma pagina para os clientes entrarem
 }
 
-function loginEmployees() {
+function loginEmployees(){
   //pagina de login de acesso ao gerente
 }
 
-function pendingClient() {
+function pendingClient(){
   //depois de ja logado a pagina exibe os clientes que estão pendentes para a aprovação
 }
 
-function approvedClient() {
+function approvedClient(){
   //retorna os clientes já aprovados pelo gerente
 }
