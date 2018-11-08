@@ -1,15 +1,13 @@
-$(document).ready(() => {
-  page('/', index);
-  page('/newuser', newuser);
-  page('/newuser/myinformations', myInformations);
-  page('/newuser/myadress', myAdress);
-  page('/newuser/docvalidation', docValidation);
-  page('/newuser/limit', limitAccount);
-  page('/login', loginUser);
-  page('/employees', loginEmployees);
-  page('/employees/pending', pendingClient);
-  page('/employees/approved', approvedClient);
-});
+page('/', index);
+page('/newuser', newuser);
+page('/newuser/myinformations', myInformations);
+page('/newuser/myadress', myAdress);
+page('/newuser/docvalidation', docValidation);
+page('/newuser/limit', limitAccount);
+page('/login', loginUser);
+page('/employees', loginEmployees);
+page('/employees/pending', pendingClient);
+page('/employees/approved', approvedClient);
 page();
 
 function index() {
