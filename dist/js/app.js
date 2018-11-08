@@ -1,4 +1,6 @@
-// const cpfValidate = require('validar-cpf');
+
+const cpfValidate = require('validar-cpf');
+const numberCPF = $('#cpf');
 
 // function validator(numberCPF) {
 //   return cpfValidate(numberCPF);
