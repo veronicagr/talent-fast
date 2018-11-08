@@ -26,9 +26,9 @@ a {
     "navbar"
     "main"
     "footer";
-    background-image: url("assets/images/app-bg-1.png");
+    /* background-image: url("assets/images/app-bg-1.png");
     background-size: 100% 100%; 
-    background-repeat: no-repeat;
+    background-repeat: no-repeat; */
     justify-items: center;
     align-items: center;
 }
