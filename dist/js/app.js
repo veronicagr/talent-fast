@@ -1,4 +1,5 @@
-function verifyCPF() {
+function verifyCPF(event) {
+  event.preventDefault();
   let numberCPF = $('#cpf').val();
   let status = validarCpf(numberCPF);
   if(status == false){
@@ -29,6 +30,25 @@ const validarCpf = input => {
   return true;
 }
 
+function changeToAdressForm(event) {
+  event.preventDefault();
+  page.redirect('/newuser/myadress')  
+}
+
+function changeToIncome(event) {
+  event.preventDefault();
+  page.redirect('/newuser/myincome')  
+}
+
+function changeToDocValidation(event) {
+  event.preventDefault();
+  page.redirect('/newuser/docvalidation')  
+}
+
+function changeToLimit(event) {
+  event.preventDefault();
+  page.redirect('/newuser/limit')  
+}
 
 function cpfRequest() {
   return fetch('https://talent-fest-e8129.firebaseio.com/consultaCPF.json')
@@ -39,7 +59,6 @@ function cpfRequest() {
 
 function loadCPF(data) {
   $.each(data, function(index, value) {
-
   });
 }
 
