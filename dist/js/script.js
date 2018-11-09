@@ -56,7 +56,7 @@ function loginEmployees() {
 }
 
 function pendingClient() {
-  $("#main").html(renderLogin());
+  $("#main").html(rederPendingClient());
 }
 
 function approvedClient() {

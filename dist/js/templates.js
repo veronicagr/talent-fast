@@ -266,7 +266,7 @@ function renderLogin() {
     <label>Senha: </label>
     <br>
     <input type="password">
-    <button class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
+    <button class="form-button" type="button" onClick="changeToManagerPage(event)">Entrar</button>
   </form>
 </div>
 `
@@ -298,4 +298,10 @@ function renderUserAccount() {
     <p class="align">Você ainda não possui crédito em sua conta, para começar a usar, faça um depósito ou transferência.</p>
   </div>
   `
+}
+
+function renderPedingClient(){
+  return ´
+    
+  ´
 }
