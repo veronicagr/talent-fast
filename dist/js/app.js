@@ -90,6 +90,7 @@ const validarCpf = input => {
 
 function changeToAdressForm(event) {
   event.preventDefault();
+  refused();
   page.redirect('/newuser/myadress')
 }
 
@@ -146,6 +147,14 @@ function calcLimit(numberCPF) {
       }
     })
 }
+
+function refused() {
+  database.ref('/refused/').once('value')
+    .then(function(snapshot) {
+      return snapshot.val();
+    });
+}
+
 
 function format(mask, doc) {
   let i = doc.value.length;
