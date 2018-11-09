@@ -39,11 +39,11 @@ function docValidation() {
 
 function limitAccount() {
   //aproved??
-  if(aproved){
+  // if(aproved){
     $("#main").html(rederLimitAccount());
-  }else{
-    $("#main").html(deniedAccount());
-  }
+  // }else{
+  //   $("#main").html(deniedAccount());
+  // }
 
 }
 
