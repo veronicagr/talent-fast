@@ -27,7 +27,7 @@ function renderNewUser() {
         <br>
         <label>CPF: </label>
         <br>
-        <input id="cpf" type="text" name="CPF" placeholder="" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
+        <input id="cpf" type="text" name="CPF" placeholder="" maxlength="14" OnKeyPress="format('###.###.###-##', this)">
         <br>
         <button class="form-button" type="button" placeholder="Submit" onclick="verifyCPF(event)">Consultar</button>
       </form>
@@ -236,7 +236,7 @@ function renderLimitAccount() {
   `
 }
 
-function deniedAccount() {
+function renderDeniedAccount() {
   return `
     <div class="">
       <div class="">
