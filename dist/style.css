@@ -6,6 +6,7 @@
 }
 
 body {
+  background: rgba(196, 101, 255, 0.12);
   margin: 0 auto;
   width: 100vw;
   height: 100vh;
@@ -20,7 +21,7 @@ a {
 .background {
   width: 100vw;
   height: 100vh;
-  font-family: 'Inconsolata', monospace;
+  font-family: sans-serif;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 15.5% 4.5% 80%;
@@ -228,4 +229,22 @@ margin-bottom: 50px;
   border: none;
   color: white; 
   margin-bottom: 5px;
+}
+.container-main-maneger{
+  margin-top: 50px;
+}
+.container-main-maneger h3 {
+  text-align: center;
+  font-weight: 700;
+}
+.container-user{
+  border-bottom: 1px solid lightgray;
+  margin: 10px;
+  padding: 10px;
+}
+
+.buttons-manager{
+  display: flex;
+  flex-direction: column;
+  
 }
