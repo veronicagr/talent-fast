@@ -1,9 +1,12 @@
+const database = firebase.database();
+
 function verifyCPF() {
   let numberCPF = $('#cpf').val();
   let status = validarCpf(numberCPF);
   if (status === false) {
     $('#cpf').before('<p style="color:red">CPF inválido</p>');
   } else {
+    cpfRequest(numberCPF);
     page.redirect('/newuser/myinformations');
   }
 }
@@ -29,39 +32,32 @@ const validarCpf = input => {
   return true;
 };
 
-function cpfRequest() {
-  return fetch('https://talent-fest-e8129.firebaseio.com/consultaCPF.json')
-    .then(response => response.json())
-    .then(json => json)
+
+function cpfRequest(numberCPF) {
+  // return fetch('https://talent-fest-e8129.firebaseio.com/consultaCPF.json')
+  //   .then(response => response.json())
+  //   .then(json => json)
+  database.ref('/consultaCPF/').once('value')
+    .then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+      let childKey = childSnapshot.key;
+      console.log(childSnapshot.key);
+      let childData = childSnapshot.val();
+      console.log(childSnapshot.val());
+      // childSnapshot.forEach(function(d) {
+      //   movies.push(d.val())
+      // })
+      });
+    })
+
     .catch(error => handleError(error));
 };
 
-function loadCPF(data) {
-  $.each(data, function(index, value) {
 
-  });
+function handleError(event) {
+  console.log(event);
 }
 
-
-// function cpfRequest() {
-//   const url = 'https://raw.githubusercontent.com/adrianosferreira/afrodite.json/master/afrodite.json';
-//
-//   $.ajax({
-//     type: 'GET',
-//     dataType: 'json',
-//     url,
-//     success: loadCPF,
-//     error
-//   });
-// }
-//
-// function loadCPF(data) {
-//   $.each(data, function(index, value) {
-//     nameRecipe = data[index].nome;
-//     idRecipe = data[index]._id['$oid'];
-//     showAllRecipes();
-//   });
-// }
 
 function format(mask, doc) {
   let i = doc.value.length;
