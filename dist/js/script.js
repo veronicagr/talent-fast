@@ -38,7 +38,13 @@ function docValidation() {
 }
 
 function limitAccount() {
-  //retorna o limite aprovado
+  //aproved??
+  // if(aproved){
+    $("#main").html(rederLimitAccount());
+  // }else{
+  //   $("#main").html(deniedAccount());
+  // }
+
 }
 
 function loginUser() {
