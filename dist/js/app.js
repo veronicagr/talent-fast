@@ -8,7 +8,11 @@ function verifyCPF(event) {
     $('#cpf').before('<p style="color:red">CPF inválido</p>');
   } else {
     cpfRequest(numberCPF);
-    page.redirect('/newuser/myinformations');
+    $('#request-answer').append(`<h3 class="request-answer">Consulta realizada, CPF aprovado!</h3>`);
+    setTimeout(() => {
+      page.redirect('/newuser/myinformations');
+    },2000)
+
   }
 }
 
