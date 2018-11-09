@@ -1,4 +1,3 @@
-
 const database = firebase.database();
 
 function verifyCPF(event) {
@@ -12,6 +11,7 @@ function verifyCPF(event) {
     page.redirect('/newuser/myinformations');
   }
 }
+
 const validarCpf = input => {
   const cpf = input.replace(/\D/g, '');
   if (cpf === '' || cpf.length !== 11 || !/^\d{11}$/.test(cpf)) {
@@ -63,28 +63,29 @@ function cpfRequest(numberCPF) {
     .then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
       let childKey = childSnapshot.key;
-      console.log(childSnapshot.key);
-      let childData = childSnapshot.val();
-      console.log(childSnapshot.val());
+      if (numberCPF === childKey) {
+        return numberCPF;
+      } return ("nao achou");
+      // console.log(cpfFilter);
+      // let childData = childSnapshot.val();
+      // console.log(childSnapshot.val());
       // childSnapshot.forEach(function(d) {
       //   movies.push(d.val())
       // })
-      });
-    })
 
-    .catch(error => handleError(error));
-};
-
-<<<<<<< HEAD
-
-function handleError(event) {
-  console.log(event);
-=======
-function loadCPF(data) {
-  $.each(data, function(index, value) {
-  });
->>>>>>> ce5b25e38fc9cb76a3bbf3d369be4ac0b6695a4f
+    // .catch(error => handleError(error));
+})
+})
 }
+
+// function handleError(event) {
+//   console.log(event);
+// }
+
+// function loadCPF(data) {
+//   $.each(data, function(index, value) {
+//   });
+// }
 
 
 function format(mask, doc) {
