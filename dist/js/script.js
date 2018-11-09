@@ -34,7 +34,7 @@ function myIncome(){
 }
 
 function docValidation() {
-  $("#main").html(rederDocValidation());
+  $("#main").html(renderDocValidation());
 }
 
 function limitAccount() {
