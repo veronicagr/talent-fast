@@ -103,7 +103,7 @@ function renderMyAdress() {
       <br>
       <label>Rua: </label>
       <br>
-      <input type="text" placeholder="Av, Rua...">
+      <input type="text" placeholder="">
       <br>
       <label>Número: </label>
       <br>
@@ -111,7 +111,7 @@ function renderMyAdress() {
       <br>
       <label>Complemento: </label>
       <br>
-      <input type="text" placeholder="ap, bloco...">
+      <input type="text" placeholder="">
       <br>
       <label>Bairro: </label>
       <br>
@@ -191,13 +191,13 @@ function renderDocValidation() {
       <br>
       <input class="add-image" type="file" accept="image/*" capture="camera" value=""/>
       <br>
-      <button class="form-button" type="button" onClick="changeToLimit(event)" href='/newuser/docvalidation'>Prosseguir</button>
+      <button class="form-button" type="button" onClick="changeToLimit(event)">Prosseguir</button>
     </form>
   </div>
   `
 }
 
-function rederLimitAccount() {
+function renderLimitAccount() {
   return `
   <div class="container">
     <ul class="progressbar">
@@ -214,7 +214,7 @@ function rederLimitAccount() {
       <i class="fas fa-check-circle"></i>
       <p>A criação da sua conta foi aprovada!</p>
     </div>
-    <p>Seu limite é de R$ ${value}</p>
+    <p>Seu limite é de R$ 3.000,00</p>
     <p>Crie seu acesso a conta:</p>
     <form class="">
       <label>E-mail</label>
@@ -234,6 +234,7 @@ function rederLimitAccount() {
   </div>
   `
 }
+
 function deniedAccount() {
   return `
     <div class="">
