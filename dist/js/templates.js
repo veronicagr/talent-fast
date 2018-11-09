@@ -82,9 +82,8 @@ function renderMyInformations() {
     </div>
   `
 }
-<<<<<<< HEAD
-function renderMyAdress (){
-  return`
+function renderMyAdress() {
+  return `
   <div class="container">
     <ul class="progressbar">
         <li class="active">cpf</li>
@@ -94,11 +93,6 @@ function renderMyAdress (){
         <li>docs</li>
     </ul>
   </div>
-=======
-function renderMyAdress() {
-  return `
-  <div class="progress">point</div>
->>>>>>> e895abb9803e0d761d6cfd733dda46be51cb266e
   <div class="form-container">
     <form class="#">
       <label>CEP: </label>
