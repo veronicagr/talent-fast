@@ -15,7 +15,7 @@ function renderNewUser() {
           <li>endereço</li>
           <li>trabalho</li>
           <li>docs</li>
-          <li>ok!</li>  
+          <li>ok!</li>
       </ul>
     </div>
     <div class="form-container">
@@ -32,7 +32,7 @@ function renderNewUser() {
         <a class="form-button" type="button" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
       </form>
     </div>
-  `
+  `;
 }
 
 function renderMyInformations() {
@@ -44,7 +44,7 @@ function renderMyInformations() {
           <li>endereço</li>
           <li>trabalho</li>
           <li>docs</li>
-          <li>ok!</li>    
+          <li>ok!</li>
       </ul>
     </div>
     <div class="form-container">
@@ -81,10 +81,10 @@ function renderMyInformations() {
         <a class="form-button" href='/newuser/myadress'>Prosseguir</a>
       </form>
     </div>
-  `
+  `;
 }
-function renderMyAdress (){
-  return`
+function renderMyAdress() {
+  return `
   <div class="container">
     <ul class="progressbar">
         <li class="active">cpf</li>
@@ -92,7 +92,7 @@ function renderMyAdress (){
         <li class="active">endereço</li>
         <li>trabalho</li>
         <li>docs</li>
-        <li>ok!</li>  
+        <li>ok!</li>
     </ul>
   </div>
   <div class="form-container">
@@ -128,10 +128,10 @@ function renderMyAdress (){
       <a class="form-button" href='/newuser/myincome'>Prosseguir</a>
     </form>
   </div>
-  `
+  `;
 }
 
-function renderMyIncome(){
+function renderMyIncome() {
   return `
   <div class="container">
     <ul class="progressbar">
@@ -140,7 +140,7 @@ function renderMyIncome(){
         <li class="active">endereço</li>
         <li class="active">trabalho</li>
         <li>docs</li>
-        <li>ok!</li>  
+        <li>ok!</li>
     </ul>
   </div>
   <div class="form-container">
@@ -161,7 +161,7 @@ function renderMyIncome(){
       <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
     </form>
   </div>
-  `
+  `;
 }
 
 function renderDocValidation(){
