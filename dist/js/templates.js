@@ -31,6 +31,7 @@ function renderNewUser() {
         <br>
         <button class="form-button" type="button" placeholder="Submit" onclick="verifyCPF(event)">Consultar</button>
       </form>
+      <div id="request-answer"></div>
     </div>
   `;
 }
@@ -241,15 +242,14 @@ function renderDeniedAccount() {
     <div class="">
       <div class="">
         <i class="fas fa-times-circle"></i>
-        <p>A criação da conta foi negada.</p>
+        <p class="align">Informe seu e-mail para que nossa equipe entre em contato para uma conversa ou nova tentativa.</p>
       </div>
-      <p>Informe seu e-mail para que nossa equipe entre em contato para outra tentativa:</p>
-      <input type="email" placeholder="e-mail">
-      <button type="button" name="button">Enviar</button>
+      <label>E-mail</label>
+      <input type="email" placeholder="">
+      <button class="form-button" type="button" name="button">Enviar</button>
     </div>
   `
 }
-
 
 function renderLogin() {
   return `
