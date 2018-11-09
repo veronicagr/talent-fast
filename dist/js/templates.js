@@ -271,8 +271,6 @@ function renderLogin() {
 `
 }
 
-
-
 function renderLoginCliente() {
   return `
   <div class="form-container">
