@@ -156,7 +156,11 @@ function calcLimit(numberCPF) {
 function refused() {
   database.ref('/refused/').once('value')
     .then(function(snapshot) {
-      return snapshot.val();
+        let userMap = snapshot.val();
+        let users = Object.keys(userMap).map(k => {
+          return {cpf: k, ...userMap[k]};
+        });
+        $("#main").html(renderPendingClient(users));
     });
 }
 

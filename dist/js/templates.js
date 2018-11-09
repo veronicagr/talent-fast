@@ -253,27 +253,22 @@ function renderDeniedAccount() {
 
 function renderLogin() {
   return `
-<div class="form-container">
-<div id = 'iconFuncionario' >
-<i class="icon fas fa-lock"></i>
-</div>
-  <h3>Login Funcionário</h3>
-  <form>
-    <label>E-mail: </label>
-    <br>
-    <input class="login-email" type="email">
-    <br>
-    <label>Senha: </label>
-    <br>
-<<<<<<< HEAD
-    <input type="password">
-    <button class="form-button" type="button" onClick="changeToManagerPage(event)">Entrar</button>
-=======
-    <input class="login-password" type="password">
-    <button id="login-button" class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
->>>>>>> 07629b2f44d3176dce9129b35903fe9522bf5068
-  </form>
-</div>
+  <div class="form-container">
+  <div id = 'iconFuncionario' >
+  <i class="icon fas fa-lock"></i>
+  </div>
+    <h3>Login Funcionário</h3>
+    <form>
+      <label>E-mail: </label>
+      <br>
+      <input class="login-email" type="email">
+      <br>
+      <label>Senha: </label>
+      <br>
+      <input type="password">
+      <button class="form-button" type="button" onClick="changeToManagerPage(event)">Entrar</button>
+    </form>
+  </div>
 `
 }
 
@@ -305,8 +300,23 @@ function renderUserAccount() {
   `
 }
 
-function renderPedingClient(){
-  return ´
-    
-  ´
+function renderPendingClient(users){
+  console.log(users);
+  return `
+  <div>
+    <div class="">
+      <p>Pendentes</p>
+      <p>Aprovados</p>
+    </div>
+    ${users.map((user)=>
+      `<div class="">
+        <p>Name:${user.name}</p>
+        <p>Email:${user.email}</p>
+        <p>CPF:${user.cpf}</p>
+        <button type="button" disabled>Fazer oferta</button>
+        <button type="button" disabled>Contactar</button>
+      </div>`
+    ).join('')}
+  </div>
+  `
 }
