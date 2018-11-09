@@ -250,9 +250,9 @@ function deniedAccount() {
 
 
 function renderLogin() {
-return `
+  return `
 <div class="form-container">
-  <h3>Login</h3>
+  <h3>Login Funcionário</h3>
   <form>
     <label>E-mail: </label>
     <br>
@@ -264,5 +264,25 @@ return `
     <button class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
   </form>
 </div>
-` 
+`
+}
+
+
+
+function renderLoginCliente() {
+  return `
+  <div class="form-container">
+    <h3>Login Cliente</h3>
+    <form>
+      <label>E-mail: </label>
+      <br>
+      <input type="email">
+      <br>
+      <label>Senha: </label>
+      <br>
+      <input type="password">
+      <button class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
+    </form>
+  </div>
+  `
 }
