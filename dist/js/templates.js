@@ -149,7 +149,7 @@ function renderMyIncome() {
     <form>
       <label>Salário(R$): </label>
       <br>
-      <input type="text" OnKeyPress="format('##,##', this)">
+      <input type="text" OnKeyPress="format('####,##', this)">
       <br>
       <label>Empresa: </label>
       <br>
