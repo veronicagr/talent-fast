@@ -90,7 +90,6 @@ const validarCpf = input => {
 
 function changeToAdressForm(event) {
   event.preventDefault();
-  refused();
   page.redirect('/newuser/myadress')
 }
 
