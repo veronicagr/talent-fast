@@ -2,10 +2,58 @@ const database = firebase.database();
 const USER_ID = localStorage.getItem("userId");
 
 $(document).ready(function() {
-  $(".sign-in-button").click(signInClick);
-  $(".register-link").click(showRegister);
-  $(".sign-up-button").click(signUpClick);
+  $("#login-button").click(loginClick);
+  $("#sign-up-button").click(signUpClick);
 });
+
+function registerNewUser(email, password) {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function(response) {
+      const userId = response.user.uid;
+      database.ref("users/" + userId).set({
+        email: email
+      });
+      redirectToProfile(userId);
+    })
+    .catch(function(error) {
+      handleError(error);
+    });
+}
+
+function handleError(error) {
+  const errorMessage = error.message;
+  alert(errorMessage);
+}
+
+function redirectToProfile(userId) {
+  localStorage.setItem("userId", userId)
+  window.location = "/login";
+}
+
+function signUpClick(event) {
+  event.preventDefault();
+  const email = $(".sign-up-email").val();
+  const password = $(".sign-up-password").val();
+  registerNewUser(email, password);
+}
+
+function loginClick(event) {
+  event.preventDefault();
+  const email = $(".login-email").val();
+  const password = $(".login-password").val();
+  signInUser(email, password);
+}
+
+function signInUser(email, password) {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function(response) {
+      const userId = response.user.uid;
+      redirectToProfile(userId);
+    })
+    .catch(function(error) {
+      handleError(error)
+    });
+}
 
 function verifyCPF(event) {
   event.preventDefault();
@@ -42,6 +90,7 @@ const validarCpf = input => {
 
 function changeToAdressForm(event) {
   event.preventDefault();
+  refused();
   page.redirect('/newuser/myadress')
 }
 
@@ -77,10 +126,10 @@ function cpfRequest(numberCPF) {
   database.ref('/consultaCPF/' + nCPF).once('value')
     .then(function(snapshot) {
       if (snapshot.val().blacklist === true || snapshot.val().totalOcorrencias > 0) {
-        $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado! Por favor, tente em um outro momento!</h3>`);
+        $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado.</h3>`);
         setTimeout(() => {
           page.redirect('/newuser/refused');
-        },2000)
+        },2500)
       } else {
         $('#request-answer').append(`<h3 class="request-answer green">Consulta realizada, CPF aprovado!</h3>`);
         sessionStorage.setItem('CPF', nCPF);
@@ -103,6 +152,14 @@ function calcLimit(numberCPF) {
       }
     })
 }
+
+function refused() {
+  database.ref('/refused/').once('value')
+    .then(function(snapshot) {
+      return snapshot.val();
+    });
+}
+
 
 function format(mask, doc) {
   let i = doc.value.length;

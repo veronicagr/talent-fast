@@ -31,6 +31,7 @@ function renderNewUser() {
         <br>
         <button class="form-button" type="button" placeholder="Submit" onclick="verifyCPF(event)">Consultar</button>
       </form>
+      <div id="request-answer"></div>
     </div>
   `;
 }
@@ -219,17 +220,17 @@ function renderLimitAccount() {
     <form class="">
       <label>E-mail</label>
       <br>
-      <input type="email">
+      <input class="sign-up-email" type="email">
       <br>
       <label>Senha</label>
       <br>
-      <input type="password">
+      <input class="sign-up-password" type="password">
       <br>
       <label>Confirmar Senha</label>
       <br>
       <input type="password">
       <br>
-      <button class="form-button" type="button" onClick="sendNewUser(event)">Cadastrar</button>
+      <button id="sign-up-button" class="form-button" type="button" onClick="sendNewUser(event)">Cadastrar</button>
       <div id="request-answer"></div>
     </form>
   </div>
@@ -241,15 +242,14 @@ function renderDeniedAccount() {
     <div class="">
       <div class="">
         <i class="fas fa-times-circle"></i>
-        <p>A criação da conta foi negada.</p>
+        <p class="align">Informe seu e-mail para que nossa equipe entre em contato para uma conversa ou nova tentativa.</p>
       </div>
-      <p>Informe seu e-mail para que nossa equipe entre em contato para outra tentativa:</p>
-      <input type="email" placeholder="e-mail">
-      <button type="button" name="button">Enviar</button>
+      <label>E-mail</label>
+      <input type="email" placeholder="">
+      <button class="form-button" type="button" name="button">Enviar</button>
     </div>
   `
 }
-
 
 function renderLogin() {
   return `
@@ -261,12 +261,17 @@ function renderLogin() {
   <form>
     <label>E-mail: </label>
     <br>
-    <input type="email">
+    <input class="login-email" type="email">
     <br>
     <label>Senha: </label>
     <br>
+<<<<<<< HEAD
     <input type="password">
     <button class="form-button" type="button" onClick="changeToManagerPage(event)">Entrar</button>
+=======
+    <input class="login-password" type="password">
+    <button id="login-button" class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
+>>>>>>> 07629b2f44d3176dce9129b35903fe9522bf5068
   </form>
 </div>
 `
@@ -285,7 +290,7 @@ function renderLoginCliente() {
       <label>Senha: </label>
       <br>
       <input type="password">
-      <button class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
+      <button id="login-button" class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
     </form>
   </div>
   `
