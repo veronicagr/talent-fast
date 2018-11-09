@@ -67,9 +67,12 @@ function cpfRequest(numberCPF) {
     .then(function(snapshot) {
       if (snapshot.val().blacklist === true || snapshot.val().totalOcorrencias > 0) {
         $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado! Por favor, tente em um outro momento!</h3>`);
+        setTimeout(() => {
+          page.redirect('/newuser/refused');
+        },2000)
       } else {
         $('#request-answer').append(`<h3 class="request-answer green">Consulta realizada, CPF aprovado!</h3>`);
-        localStorage.setItem('CPF', JSON.stringify(nCPF));
+        localStorage.setItem('CPF', nCPF);
         setTimeout(() => {
           page.redirect('/newuser/myinformations');
         },2000)

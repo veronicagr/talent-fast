@@ -1,5 +1,6 @@
 page('/', index);
 page('/newuser', newUser);
+page('/newuser/refused', userRefused);
 page('/newuser/myinformations', myInformations);
 page('/newuser/myadress', myAdress);
 page('/newuser/myincome', myIncome);
@@ -22,6 +23,10 @@ function newUser() {
   $("#main").html(renderNewUser());
 }
 
+function userRefused(){
+  $("#main").html(renderDeniedAccount());
+}
+
 function myInformations() {
   $("#main").html(renderMyInformations());
 }
@@ -39,15 +44,7 @@ function docValidation() {
 }
 
 function limitAccount() {
-  //aproved??
-  // if(aproved){
-
-    $("#main").html(renderLimitAccount());
-
-
-  // }else{
-  //   $("#main").html(deniedAccount());
-  // }
+  $("#main").html(renderLimitAccount());
 }
 
 function loginUser() {
@@ -56,12 +53,10 @@ function loginUser() {
 
 function loginEmployees() {
   $("#main").html(renderLogin());
-  //pagina de login de acesso ao gerente
 }
 
 function pendingClient() {
   $("#main").html(renderLogin());
-  //depois de ja logado a pagina exibe os clientes que estão pendentes para a aprovação
 }
 
 function approvedClient() {
@@ -69,5 +64,5 @@ function approvedClient() {
 }
 
 function userAccount() {
-  $("#main").html(renderUserAccount());  
+  $("#main").html(renderUserAccount());
 }
