@@ -90,7 +90,6 @@ const validarCpf = input => {
 
 function changeToAdressForm(event) {
   event.preventDefault();
-  refused();
   page.redirect('/newuser/myadress')
 }
 
@@ -177,5 +176,5 @@ function format(mask, doc) {
 
 function sendNewUser(event) {
   event.preventDefault();
-  $('#request-answer').append(`<h3 class="request-answer">Cadastro efetuado! Faça <a href="/login" class="login-link">login</a></h3>`);
+  $('#request-answer').html(`<h3 class="request-answer">Cadastro efetuado! Faça <a href="/login" class="login-link">login</a></h3>`);
 }

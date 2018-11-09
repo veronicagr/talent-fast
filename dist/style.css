@@ -23,7 +23,7 @@ a {
   font-family: 'Inconsolata', monospace;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 15% 5% 80%;
+  grid-template-rows: 15.5% 4.5% 80%;
   grid-template-areas:
     "header"
     "navbar"
@@ -63,12 +63,12 @@ a {
 .nav-button {
   background-color: rgb(32, 32, 32);
   padding: 4px;
-  border-radius: 3px;
-  width: 100px;
+  width: 105px;
   margin: 0 5px;
   text-align: center;
-  font-size: 9px;
-  padding: 7px;
+  font-size: 11px;
+  padding: 7px 9px;
+  vertical-align: center;
 }
 
 .icon {
@@ -99,7 +99,7 @@ option {
 }
 
 .logo {
-  width: 200px;
+  width: 250px;
   height: 100px;
 }
 
@@ -217,4 +217,15 @@ margin-bottom: 50px;
   color:black;
   text-decoration: underline;
   font-size: 12px;
+}
+
+.form-button-func {
+  background-color: rgba(177, 177, 177, 0.829);
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 14px;
+  width: 60%;
+  border: none;
+  color: white; 
+  margin-bottom: 5px;
 }
