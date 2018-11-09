@@ -101,12 +101,7 @@ input {
 
 .form-container {
   width: 100%;
-<<<<<<< HEAD
   margin-top: 15px;
-=======
-  display: flex;
-  flex-direction: column;
->>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
 }
 
 .form-button {
@@ -116,10 +111,6 @@ input {
   font-size: 14px;
   width: 100%;
   border: none;
-<<<<<<< HEAD
-}
-=======
-  margin-top: 20px;
 }
 
 .welcome {
@@ -190,4 +181,3 @@ input {
   border: 1px solid lightgrey;
   border-radius: 2px;
 } */
->>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270

@@ -29,11 +29,7 @@ function renderNewUser() {
         <br>
         <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
         <br>
-<<<<<<< HEAD
-        <a class="form-button" onclick="verifyCPF()">Consultar</a>
-=======
-        <a class="form-button" type="button" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
->>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
+        <button class="form-button" type="button" placeholder="Submit" onclick="verifyCPF(event)">Consultar</button>
       </form>
     </div>
   `;
@@ -68,15 +64,7 @@ function renderMyInformations() {
         <br>
         <label>Celular: </label>
         <br>
-<<<<<<< HEAD
-        <input type="text" maxlength="13" OnKeyPress="formatar('(##)####-####', this)">
-=======
-<<<<<<< HEAD
-        <input type="text" maxlength="13" OnKeyPress="format('##-####-####', this)">
-=======
         <input type="text" maxlength="13" OnKeyPress="format('##-#####-####', this)">
->>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
->>>>>>> f5d57ddff0a0cd00f7b1b2c26d16fc0753f252b8
         <br>
         <label>RG: </label>
         <br>
@@ -90,7 +78,7 @@ function renderMyInformations() {
         <br>
         <input type="text" placeholder="">
         <br>
-        <a class="form-button" href='/newuser/myadress'>Prosseguir</a>
+        <button class="form-button" type="button" onClick="changeToAdressForm(event)">Prosseguir</button>
       </form>
     </div>
   `;
@@ -137,7 +125,7 @@ function renderMyAdress() {
       <br>
       <input type="text">
       <br>
-      <a class="form-button" href='/newuser/myincome'>Prosseguir</a>
+      <button class="form-button" type="button" onClick="changeToIncome(event)">Prosseguir</button>
     </form>
   </div>
   `;
@@ -170,7 +158,7 @@ function renderMyIncome() {
       <br>
       <input type="text">
       <br>
-      <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
+      <button class="form-button" type="button" onClick="changeToDocValidation(event)">Prosseguir</button>
     </form>
   </div>
   `;
@@ -203,7 +191,7 @@ function renderDocValidation() {
       <br>
       <input class="add-image" type="file" accept="image/*" capture="camera" value=""/>
       <br>
-      <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
+      <button class="form-button" type="button" onClick="changeToLimit(event)" href='/newuser/docvalidation'>Prosseguir</button>
     </form>
   </div>
   `
