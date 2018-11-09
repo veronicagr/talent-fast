@@ -54,6 +54,11 @@ function changeToLimit(event) {
   page.redirect('/newuser/limit')
 }
 
+function changeToClientsSituation(event) {
+  event.preventDefault();
+  page.redirect('/useraccount')
+}
+
 
 function cpfRequest(numberCPF) {
   let nCPF = numberCPF.replace(/\.|\-/g, '');

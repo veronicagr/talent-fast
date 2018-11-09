@@ -23,11 +23,11 @@ function renderNewUser() {
       <form class="#">
         <label>Nome: </label>
         <br>
-        <input type="text" name="Name" placeholder="Nome completo">
+        <input type="text" name="Name" placeholder="">
         <br>
         <label>CPF: </label>
         <br>
-        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
+        <input id="cpf" type="text" name="CPF" placeholder="" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
         <br>
         <button class="form-button" type="button" placeholder="Submit" onclick="verifyCPF(event)">Consultar</button>
       </form>
@@ -212,10 +212,10 @@ function renderLimitAccount() {
   <div class="">
     <div class="">
       <i class="fas fa-check-circle"></i>
-      <p>A criação da sua conta foi aprovada!</p>
+      <p class="align">Seus dados foram analisados e seu perfil foi aprovado!</p>
+      <p class="align">Você tem disponível um limite de R$ 3.000,00</p>
+      <p class="align">Para concluir a abertura de sua conta, finalize seu cadastro</p>
     </div>
-    <p>Seu limite é de R$ 3.000,00</p>
-    <p>Crie seu acesso a conta:</p>
     <form class="">
       <label>E-mail</label>
       <br>
@@ -229,7 +229,7 @@ function renderLimitAccount() {
       <br>
       <input type="password">
       <br>
-      <a onclick="sendNewUser()">Enviar</a>
+      <button class="form-button" type="button" onClick="sendNewUser(event)">Cadastrar</button>
     </form>
   </div>
   `
@@ -288,6 +288,15 @@ function renderLoginCliente() {
       <input type="password">
       <button class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
     </form>
+  </div>
+  `
+}
+
+function renderUserAccount() {
+  return `
+  <div class="">
+    <p class="align">Seja bem-vindo(a)!</p>
+    <p class="align">Você ainda não possui crédito em sua conta, para começar a usar, faça um depósito ou transferência.</p>
   </div>
   `
 }
