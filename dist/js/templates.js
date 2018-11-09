@@ -20,7 +20,7 @@ function renderNewUser(){
         <br>
         <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
         <br>
-        <a class="form-button" type="submit" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
+        <a class="form-button" onclick="verifyCPF()">Consultar</a>
       </form>
     </div>
   `
@@ -41,7 +41,7 @@ function renderMyInformations(){
         <br>
         <label>Celular: </label>
         <br>
-        <input type="number" maxlength="13" OnKeyPress="formatar('(##)####-####', this)">
+        <input type="text" maxlength="13" OnKeyPress="format('##-####-####', this)">
         <br>
         <label>RG: </label>
         <br>
@@ -68,7 +68,7 @@ function renderMyAdress (){
     <form class="#">
       <label>CEP: </label>
       <br>
-      <input type="number" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)" onblur="verifyCPF(this)">
+      <input type="text" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)">
       <br>
       <label>Rua: </label>
       <br>
@@ -107,7 +107,7 @@ function renderMyIncome(){
     <form>
       <label>Salario(R$): </label>
       <br>
-      <input type="text">
+      <input type="text" OnKeyPress="format('##,##', this)">
       <br>
       <label>Empresa: </label>
       <br>
@@ -124,7 +124,48 @@ function renderMyIncome(){
 }
 
 function renderDocValidation(){
+  return `
+
+  `
+}
+
+function rederLimitAccount(){
+  return `
+  <div class="">
+    <div class="">
+      <i class="fas fa-check-circle"></i>
+      <p>A criação da sua conta foi aprovada!</p>
+    </div>
+    <p>Seu limite é de R$ ${value}</p>
+    <p>Crie seu acesso a conta:</p>
+    <form class="">
+      <label>E-mail</label>
+      <br>
+      <input type="email">
+      <br>
+      <label>Senha</label>
+      <br>
+      <input type="password">
+      <br>
+      <label>Confirmar Senha</label>
+      <br>
+      <input type="password">
+      <br>
+      <a onclick="sendNewUser()">Enviar</a>
+    </form>
+  </div>
+  `
+}
+function deniedAccount(){
   return`
-  
+    <div class="">
+      <div class="">
+        <i class="fas fa-times-circle"></i>
+        <p>A criação da conta foi negada.</p>
+      </div>
+      <p>Informe seu e-mail para que nossa equipe entre em contato para outra tentativa:</p>
+      <input type="email" placeholder="e-mail">
+      <button type="button" name="button">Enviar</button>
+    </div>
   `
 }
