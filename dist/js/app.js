@@ -51,14 +51,11 @@ function changeToDocValidation(event) {
 
 function changeToLimit(event) {
   event.preventDefault();
+  let numberCPF = $('#cpf').val();
+  console.log(numberCPF);
+  calcLimit(numberCPF);
   page.redirect('/newuser/limit')
 }
-
-function changeToClientsSituation(event) {
-  event.preventDefault();
-  page.redirect('/useraccount')
-}
-
 
 function cpfRequest(numberCPF) {
   let nCPF = numberCPF.replace(/\.|\-/g, '');
@@ -68,14 +65,33 @@ function cpfRequest(numberCPF) {
         console.log("não aprovado");
         $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado! Por favor, tente em um outro momento!</h3>`);
       } else {
+<<<<<<< HEAD
         console.log("Aprovado");
         $('#request-answer').append(`<h3 class="request-answer green">Consulta realizada, CPF aprovado!</h3>`);
         setTimeout(() => {
           page.redirect('/newuser/myinformations');
         },2000)
     
+=======
+        console.log("aprovado");
       }
-})
+    })
+}
+
+function calcLimit(numberCPF) {
+  console.log('calcLimit' + numberCPF);
+  let nCPF = numberCPF.replace(/\.|\-/g, '');
+  database.ref('/consultaCPF/' + nCPF).once('value')
+    .then(function(snapshot) {
+      if (snapshot.val().score > 0 && snapshot.val().score < 100) {
+        console.log("Seu limite é de R$ 500,00");
+      } else if (snapshot.val().score >= 100 && snapshot.val().score < 500) {
+        console.log("Seu limite é de R$ 2000,00");
+      } else if (snapshot.val().score >= 500 && snapshot.val().score <= 1000) {
+        console.log("Seu limite é de R$ 4000,00");
+>>>>>>> a9d8f29b92d92d31d8c9e9d545e44cfce64bc974
+      }
+    })
 }
 
 function format(mask, doc) {
