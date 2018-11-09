@@ -65,14 +65,11 @@ function cpfRequest(numberCPF) {
 })
 }
 
+
 function handleError(event) {
   console.log(event);
 }
 
-// function loadCPF(data) {
-//   $.each(data, function(index, value) {
-//   });
-// }
 
 
 function format(mask, doc) {
