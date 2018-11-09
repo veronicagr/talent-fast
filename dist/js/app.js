@@ -2,10 +2,58 @@ const database = firebase.database();
 const USER_ID = localStorage.getItem("userId");
 
 $(document).ready(function() {
-  $(".sign-in-button").click(signInClick);
-  $(".register-link").click(showRegister);
-  $(".sign-up-button").click(signUpClick);
+  $("#login-button").click(loginClick);
+  $("#sign-up-button").click(signUpClick);
 });
+
+function registerNewUser(email, password) {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then(function(response) {
+      const userId = response.user.uid;
+      database.ref("users/" + userId).set({
+        email: email
+      });
+      redirectToProfile(userId);
+    })
+    .catch(function(error) {
+      handleError(error);
+    });
+}
+
+function handleError(error) {
+  const errorMessage = error.message;
+  alert(errorMessage);
+}
+
+function redirectToProfile(userId) {
+  localStorage.setItem("userId", userId)
+  window.location = "/login";
+}
+
+function signUpClick(event) {
+  event.preventDefault();
+  const email = $(".sign-up-email").val();
+  const password = $(".sign-up-password").val();
+  registerNewUser(email, password);
+}
+
+function loginClick(event) {
+  event.preventDefault();
+  const email = $(".login-email").val();
+  const password = $(".login-password").val();
+  signInUser(email, password);
+}
+
+function signInUser(email, password) {
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then(function(response) {
+      const userId = response.user.uid;
+      redirectToProfile(userId);
+    })
+    .catch(function(error) {
+      handleError(error)
+    });
+}
 
 function verifyCPF(event) {
   event.preventDefault();
