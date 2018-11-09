@@ -52,6 +52,7 @@ function loginUser() {
 }
 
 function loginEmployees() {
+  $("#main").html(renderLogin());
   //pagina de login de acesso ao gerente
 }
 

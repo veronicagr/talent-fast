@@ -199,6 +199,16 @@ function renderDocValidation() {
 
 function rederLimitAccount() {
   return `
+  <div class="container">
+    <ul class="progressbar">
+        <li class="active">cpf</li>
+        <li class="active">infos</li>
+        <li class="active">endereço</li>
+        <li class="active">trabalho</li>
+        <li class="active">docs</li>
+        <li class="active">ok!</li>
+    </ul>
+  </div>
   <div class="">
     <div class="">
       <i class="fas fa-check-circle"></i>
@@ -236,4 +246,23 @@ function deniedAccount() {
       <button type="button" name="button">Enviar</button>
     </div>
   `
+}
+
+
+function renderLogin() {
+return `
+<div class="form-container">
+  <h3>Login</h3>
+  <form>
+    <label>E-mail: </label>
+    <br>
+    <input type="email">
+    <br>
+    <label>Senha: </label>
+    <br>
+    <input type="password">
+    <button class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
+  </form>
+</div>
+` 
 }
