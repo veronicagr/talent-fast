@@ -261,12 +261,12 @@ function renderLogin() {
   <form>
     <label>E-mail: </label>
     <br>
-    <input type="email">
+    <input class="login-email" type="email">
     <br>
     <label>Senha: </label>
     <br>
-    <input type="password">
-    <button class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
+    <input class="login-password" type="password">
+    <button id="login-button" class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
   </form>
 </div>
 `
