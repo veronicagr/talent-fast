@@ -15,7 +15,7 @@ function renderNewUser() {
           <li>endereço</li>
           <li>trabalho</li>
           <li>docs</li>
-          <li>ok!</li>
+          <li>fim</li>
       </ul>
     </div>
     <div class="form-container">
@@ -45,7 +45,7 @@ function renderMyInformations() {
           <li>endereço</li>
           <li>trabalho</li>
           <li>docs</li>
-          <li>ok!</li>
+          <li>fim</li>
       </ul>
     </div>
     <div class="form-container">
@@ -93,7 +93,7 @@ function renderMyAdress() {
         <li class="active">endereço</li>
         <li>trabalho</li>
         <li>docs</li>
-        <li>ok!</li>
+        <li>fim</li>
     </ul>
   </div>
   <div class="form-container">
@@ -141,7 +141,7 @@ function renderMyIncome() {
         <li class="active">endereço</li>
         <li class="active">trabalho</li>
         <li>docs</li>
-        <li>ok!</li>
+        <li>fim</li>
     </ul>
   </div>
   <div class="form-container">
@@ -174,7 +174,7 @@ function renderDocValidation() {
         <li class="active">endereço</li>
         <li class="active">trabalho</li>
         <li class="active">docs</li>
-        <li>ok!</li>
+        <li>fim</li>
     </ul>
   </div>
   <div class="form-container">
@@ -207,7 +207,7 @@ function renderLimitAccount() {
         <li class="active">endereço</li>
         <li class="active">trabalho</li>
         <li class="active">docs</li>
-        <li class="active">ok!</li>
+        <li class="active">fim</li>
     </ul>
   </div>
   <div class="">
@@ -313,8 +313,8 @@ function renderPendingClient(users){
         <p>Name:${user.name}</p>
         <p>Email:${user.email}</p>
         <p>CPF:${user.cpf}</p>
-        <button type="button" disabled>Fazer oferta</button>
-        <button type="button" disabled>Contactar</button>
+        <button class="form-button-func" type="button" disabled>Fazer oferta</button>
+        <button class="form-button-func" type="button" disabled>Contactar</button>
       </div>`
     ).join('')}
   </div>
