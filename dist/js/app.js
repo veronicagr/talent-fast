@@ -12,6 +12,7 @@ function verifyCPF(event) {
     page.redirect('/newuser/myinformations');
   }
 }
+
 const validarCpf = input => {
   const cpf = input.replace(/\D/g, '');
   if (cpf === '' || cpf.length !== 11 || !/^\d{11}$/.test(cpf)) {
@@ -75,16 +76,14 @@ function cpfRequest(numberCPF) {
     .catch(error => handleError(error));
 };
 
-<<<<<<< HEAD
 
-function handleError(event) {
-  console.log(event);
-=======
-function loadCPF(data) {
-  $.each(data, function(index, value) {
-  });
->>>>>>> ce5b25e38fc9cb76a3bbf3d369be4ac0b6695a4f
-}
+// function handleError(event) {
+//   console.log(event);
+// =======
+// function loadCPF(data) {
+//   $.each(data, function(index, value) {
+//   });
+// }
 
 
 function format(mask, doc) {
