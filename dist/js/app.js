@@ -1,4 +1,11 @@
 const database = firebase.database();
+const USER_ID = localStorage.getItem("userId");
+
+$(document).ready(function() {
+  $(".sign-in-button").click(signInClick);
+  $(".register-link").click(showRegister);
+  $(".sign-up-button").click(signUpClick);
+});
 
 function verifyCPF(event) {
   event.preventDefault();
@@ -8,7 +15,6 @@ function verifyCPF(event) {
     $('#cpf').before('<p style="color:red">CPF inválido</p>');
   } else {
     cpfRequest(numberCPF);
-
   }
 }
 
@@ -51,14 +57,14 @@ function changeToDocValidation(event) {
 
 function changeToLimit(event) {
   event.preventDefault();
-  let numberCPF = localStorage.getItem('CPF');
+  let numberCPF = sessionStorage.getItem('CPF');
   calcLimit(numberCPF);
-  page.redirect('/newuser/limit')
+  page.redirect('/newuser/limit');
 }
 
 function changeToClientsSituation(event) {
   event.preventDefault();
-  page.redirect('/useraccount')
+  page.redirect('/useraccount');
 }
 
 function cpfRequest(numberCPF) {
@@ -69,7 +75,7 @@ function cpfRequest(numberCPF) {
         $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado! Por favor, tente em um outro momento!</h3>`);
       } else {
         $('#request-answer').append(`<h3 class="request-answer green">Consulta realizada, CPF aprovado!</h3>`);
-        localStorage.setItem('CPF', JSON.stringify(nCPF));
+        sessionStorage.setItem('CPF', nCPF);
         setTimeout(() => {
           page.redirect('/newuser/myinformations');
         },2000)
