@@ -69,10 +69,14 @@ function renderMyInformations() {
         <label>Celular: </label>
         <br>
 <<<<<<< HEAD
+        <input type="text" maxlength="13" OnKeyPress="formatar('(##)####-####', this)">
+=======
+<<<<<<< HEAD
         <input type="text" maxlength="13" OnKeyPress="format('##-####-####', this)">
 =======
         <input type="text" maxlength="13" OnKeyPress="format('##-#####-####', this)">
 >>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
+>>>>>>> f5d57ddff0a0cd00f7b1b2c26d16fc0753f252b8
         <br>
         <label>RG: </label>
         <br>
@@ -172,7 +176,7 @@ function renderMyIncome() {
   `;
 }
 
-function renderDocValidation(){
+function renderDocValidation() {
   return `
   <div class="container">
     <ul class="progressbar">
@@ -205,7 +209,7 @@ function renderDocValidation(){
   `
 }
 
-function rederLimitAccount(){
+function rederLimitAccount() {
   return `
   <div class="">
     <div class="">
@@ -232,8 +236,8 @@ function rederLimitAccount(){
   </div>
   `
 }
-function deniedAccount(){
-  return`
+function deniedAccount() {
+  return `
     <div class="">
       <div class="">
         <i class="fas fa-times-circle"></i>
