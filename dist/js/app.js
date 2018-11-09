@@ -69,12 +69,6 @@ function handleError(event) {
   console.log(event);
 }
 
-// function loadCPF(data) {
-//   $.each(data, function(index, value) {
-//   });
-// }
-
-
 function format(mask, doc) {
   let i = doc.value.length;
   let out = mask.substring(0,1);
