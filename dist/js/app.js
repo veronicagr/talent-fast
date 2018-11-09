@@ -53,7 +53,7 @@ function changeToLimit(event) {
   event.preventDefault();
   let numberCPF = $('#cpf').val();
   console.log(numberCPF);
-  calcLimit(numberCPF);
+  // calcLimit(numberCPF);
   page.redirect('/newuser/limit')
 }
 
@@ -81,20 +81,20 @@ function cpfRequest(numberCPF) {
     })
 }
 
-function calcLimit(numberCPF) {
-  console.log('calcLimit' + numberCPF);
-  let nCPF = numberCPF.replace(/\.|\-/g, '');
-  database.ref('/consultaCPF/' + nCPF).once('value')
-    .then(function(snapshot) {
-      if (snapshot.val().score > 0 && snapshot.val().score < 100) {
-        console.log("Seu limite é de R$ 500,00");
-      } else if (snapshot.val().score >= 100 && snapshot.val().score < 500) {
-        console.log("Seu limite é de R$ 2000,00");
-      } else if (snapshot.val().score >= 500 && snapshot.val().score <= 1000) {
-        console.log("Seu limite é de R$ 4000,00");
-      }
-    })
-}
+// function calcLimit(numberCPF) {
+//   console.log('calcLimit' + numberCPF);
+//   let nCPF = numberCPF.replace(/\.|\-/g, '');
+//   database.ref('/consultaCPF/' + nCPF).once('value')
+//     .then(function(snapshot) {
+//       if (snapshot.val().score > 0 && snapshot.val().score < 100) {
+//         console.log("Seu limite é de R$ 500,00");
+//       } else if (snapshot.val().score >= 100 && snapshot.val().score < 500) {
+//         console.log("Seu limite é de R$ 2000,00");
+//       } else if (snapshot.val().score >= 500 && snapshot.val().score <= 1000) {
+//         console.log("Seu limite é de R$ 4000,00");
+//       }
+//     })
+// }
 
 function format(mask, doc) {
   let i = doc.value.length;
@@ -104,4 +104,9 @@ function format(mask, doc) {
   if (txt.substring(0,1) != out){
       doc.value += txt.substring(0,1);
   }
+}
+
+function sendNewUser(event) {
+  event.preventDefault();
+  $('#request-answer').append(`<h3 class="request-answer">Cadastro efetuado! Faça <a href="/login" class="login-link">login</a></h3>`);  
 }
