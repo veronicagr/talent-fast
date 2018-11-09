@@ -145,7 +145,7 @@ function renderMyIncome() {
     </ul>
   </div>
   <div class="form-container">
-    <p>Informe sua renda</p>
+    <p>Informe sua renda </p>
     <form>
       <label>Salário(R$): </label>
       <br>
