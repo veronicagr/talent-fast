@@ -6,6 +6,7 @@ page('/newuser/myincome', myIncome);
 page('/newuser/docvalidation', docValidation);
 page('/newuser/limit', limitAccount);
 page('/login', loginUser);
+page('/useraccount', userAccount);
 page('/employees', loginEmployees);
 page('/employees/pending', pendingClient);
 page('/employees/approved', approvedClient);
@@ -65,4 +66,8 @@ function pendingClient() {
 
 function approvedClient() {
   //retorna os clientes já aprovados pelo gerente
+}
+
+function userAccount() {
+  $("#main").html(renderUserAccount());  
 }
