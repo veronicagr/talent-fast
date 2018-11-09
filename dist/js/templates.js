@@ -301,7 +301,6 @@ function renderUserAccount() {
 }
 
 function renderPendingClient(users){
-  console.log(users);
   return `
   <div>
     <div class="">

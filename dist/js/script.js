@@ -36,6 +36,7 @@ function myAdress() {
 }
 
 function myIncome() {
+  console.log("oi");
   $("#main").html(renderMyIncome());
 }
 
