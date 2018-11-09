@@ -40,11 +40,13 @@ function docValidation() {
 function limitAccount() {
   //aproved??
   // if(aproved){
-  $("#main").html(rederLimitAccount());
+
+    $("#main").html(renderLimitAccount());
+
+
   // }else{
   //   $("#main").html(deniedAccount());
   // }
-
 }
 
 function loginUser() {
@@ -57,6 +59,7 @@ function loginEmployees() {
 }
 
 function pendingClient() {
+  $("#main").html(renderLogin());
   //depois de ja logado a pagina exibe os clientes que estão pendentes para a aprovação
 }
 
