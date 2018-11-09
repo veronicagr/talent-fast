@@ -132,7 +132,7 @@ input {
   list-style-type: none;
   width: 16%;
   float: left;
-  font-size: 12px;
+  font-size: 10px;
   position: relative;
   text-align: center;
   text-transform: uppercase;
@@ -173,3 +173,13 @@ input {
 .progressbar li.active + li:after {
   background-color: #55b776;
 }
+
+.align {
+  text-align: center;
+}
+
+/* add-image {
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+} */
