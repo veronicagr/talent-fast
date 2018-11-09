@@ -192,3 +192,10 @@ option {
   border: 1px solid lightgrey;
   border-radius: 2px;
 } */
+
+#iconCliente, #iconFuncionario{
+font-size: 80px;
+display: flex;
+justify-content: center;
+margin-bottom: 20px;  
+}
