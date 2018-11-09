@@ -29,7 +29,7 @@ function renderNewUser() {
         <br>
         <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
         <br>
-        <a class="form-button" type="button" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
+        <button class="form-button" type="button" placeholder="Submit" onclick="verifyCPF(event)">Consultar</button>
       </form>
     </div>
   `;
@@ -78,7 +78,7 @@ function renderMyInformations() {
         <br>
         <input type="text" placeholder="">
         <br>
-        <a class="form-button" href='/newuser/myadress'>Prosseguir</a>
+        <button class="form-button" type="button" onClick="changeToAdressForm(event)">Prosseguir</button>
       </form>
     </div>
   `;
@@ -125,7 +125,7 @@ function renderMyAdress() {
       <br>
       <input type="text">
       <br>
-      <a class="form-button" href='/newuser/myincome'>Prosseguir</a>
+      <button class="form-button" type="button" onClick="changeToIncome(event)">Prosseguir</button>
     </form>
   </div>
   `;
@@ -148,7 +148,7 @@ function renderMyIncome() {
     <form>
       <label>Salário(R$): </label>
       <br>
-      <input type="text">
+      <input type="text" OnKeyPress="format('##,##', this)">
       <br>
       <label>Empresa: </label>
       <br>
@@ -158,14 +158,14 @@ function renderMyIncome() {
       <br>
       <input type="text">
       <br>
-      <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
+      <button class="form-button" type="button" onClick="changeToDocValidation(event)">Prosseguir</button>
     </form>
   </div>
   `;
 }
 
-function renderDocValidation(){
-  return`
+function renderDocValidation() {
+  return `
   <div class="container">
     <ul class="progressbar">
         <li class="active">cpf</li>
@@ -173,7 +173,7 @@ function renderDocValidation(){
         <li class="active">endereço</li>
         <li class="active">trabalho</li>
         <li class="active">docs</li>
-        <li>ok!</li>  
+        <li>ok!</li>
     </ul>
   </div>
   <div class="form-container">
@@ -191,8 +191,49 @@ function renderDocValidation(){
       <br>
       <input class="add-image" type="file" accept="image/*" capture="camera" value=""/>
       <br>
-      <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
+      <button class="form-button" type="button" onClick="changeToLimit(event)" href='/newuser/docvalidation'>Prosseguir</button>
     </form>
   </div>
+  `
+}
+
+function rederLimitAccount() {
+  return `
+  <div class="">
+    <div class="">
+      <i class="fas fa-check-circle"></i>
+      <p>A criação da sua conta foi aprovada!</p>
+    </div>
+    <p>Seu limite é de R$ ${value}</p>
+    <p>Crie seu acesso a conta:</p>
+    <form class="">
+      <label>E-mail</label>
+      <br>
+      <input type="email">
+      <br>
+      <label>Senha</label>
+      <br>
+      <input type="password">
+      <br>
+      <label>Confirmar Senha</label>
+      <br>
+      <input type="password">
+      <br>
+      <a onclick="sendNewUser()">Enviar</a>
+    </form>
+  </div>
+  `
+}
+function deniedAccount() {
+  return `
+    <div class="">
+      <div class="">
+        <i class="fas fa-times-circle"></i>
+        <p>A criação da conta foi negada.</p>
+      </div>
+      <p>Informe seu e-mail para que nossa equipe entre em contato para outra tentativa:</p>
+      <input type="email" placeholder="e-mail">
+      <button type="button" name="button">Enviar</button>
+    </div>
   `
 }

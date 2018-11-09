@@ -1,6 +1,8 @@
+
 const database = firebase.database();
 
-function verifyCPF() {
+function verifyCPF(event) {
+  event.preventDefault();
   let numberCPF = $('#cpf').val();
   let status = validarCpf(numberCPF);
   if (status === false) {
@@ -30,7 +32,27 @@ const validarCpf = input => {
     }
   }
   return true;
-};
+}
+
+function changeToAdressForm(event) {
+  event.preventDefault();
+  page.redirect('/newuser/myadress')
+}
+
+function changeToIncome(event) {
+  event.preventDefault();
+  page.redirect('/newuser/myincome')
+}
+
+function changeToDocValidation(event) {
+  event.preventDefault();
+  page.redirect('/newuser/docvalidation')
+}
+
+function changeToLimit(event) {
+  event.preventDefault();
+  page.redirect('/newuser/limit')
+}
 
 
 function cpfRequest(numberCPF) {
@@ -53,9 +75,15 @@ function cpfRequest(numberCPF) {
     .catch(error => handleError(error));
 };
 
+<<<<<<< HEAD
 
 function handleError(event) {
   console.log(event);
+=======
+function loadCPF(data) {
+  $.each(data, function(index, value) {
+  });
+>>>>>>> ce5b25e38fc9cb76a3bbf3d369be4ac0b6695a4f
 }
 
 
