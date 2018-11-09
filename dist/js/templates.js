@@ -303,18 +303,17 @@ function renderUserAccount() {
 function renderPendingClient(users){
   console.log(users);
   return `
-  <div>
-    <div class="">
-      <p>Pendentes</p>
-      <p>Aprovados</p>
-    </div>
+  <div class="container-main-maneger">
+    <h3>Pendentes</h3>
     ${users.map((user)=>
-      `<div class="">
+      `<div class="container-user">
         <p>Name:${user.name}</p>
         <p>Email:${user.email}</p>
         <p>CPF:${user.cpf}</p>
+        <div class="buttons-menager">
         <button class="form-button-func" type="button" disabled>Fazer oferta</button>
         <button class="form-button-func" type="button" disabled>Contactar</button>
+        </div>
       </div>`
     ).join('')}
   </div>
