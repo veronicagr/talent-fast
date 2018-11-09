@@ -15,7 +15,7 @@ function renderNewUser() {
           <li>endereço</li>
           <li>trabalho</li>
           <li>docs</li>
-          <li>ok!</li>  
+          <li>ok!</li>
       </ul>
     </div>
     <div class="form-container">
@@ -32,7 +32,7 @@ function renderNewUser() {
         <button class="form-button" type="button" placeholder="Submit" onclick="verifyCPF(event)">Consultar</button>
       </form>
     </div>
-  `
+  `;
 }
 
 function renderMyInformations() {
@@ -44,7 +44,7 @@ function renderMyInformations() {
           <li>endereço</li>
           <li>trabalho</li>
           <li>docs</li>
-          <li>ok!</li>    
+          <li>ok!</li>
       </ul>
     </div>
     <div class="form-container">
@@ -81,10 +81,10 @@ function renderMyInformations() {
         <button class="form-button" type="button" onClick="changeToAdressForm(event)">Prosseguir</button>
       </form>
     </div>
-  `
+  `;
 }
-function renderMyAdress (){
-  return`
+function renderMyAdress() {
+  return `
   <div class="container">
     <ul class="progressbar">
         <li class="active">cpf</li>
@@ -92,7 +92,7 @@ function renderMyAdress (){
         <li class="active">endereço</li>
         <li>trabalho</li>
         <li>docs</li>
-        <li>ok!</li>  
+        <li>ok!</li>
     </ul>
   </div>
   <div class="form-container">
@@ -128,10 +128,10 @@ function renderMyAdress (){
       <button class="form-button" type="button" onClick="changeToIncome(event)">Prosseguir</button>
     </form>
   </div>
-  `
+  `;
 }
 
-function renderMyIncome(){
+function renderMyIncome() {
   return `
   <div class="container">
     <ul class="progressbar">
@@ -140,7 +140,7 @@ function renderMyIncome(){
         <li class="active">endereço</li>
         <li class="active">trabalho</li>
         <li>docs</li>
-        <li>ok!</li>  
+        <li>ok!</li>
     </ul>
   </div>
   <div class="form-container">
@@ -148,7 +148,7 @@ function renderMyIncome(){
     <form>
       <label>Salário(R$): </label>
       <br>
-      <input type="text">
+      <input type="text" OnKeyPress="format('##,##', this)">
       <br>
       <label>Empresa: </label>
       <br>
@@ -161,11 +161,11 @@ function renderMyIncome(){
       <button class="form-button" type="button" onClick="changeToDocValidation(event)">Prosseguir</button>
     </form>
   </div>
-  `
+  `;
 }
 
-function renderDocValidation(){
-  return`
+function renderDocValidation() {
+  return `
   <div class="container">
     <ul class="progressbar">
         <li class="active">cpf</li>
@@ -173,7 +173,7 @@ function renderDocValidation(){
         <li class="active">endereço</li>
         <li class="active">trabalho</li>
         <li class="active">docs</li>
-        <li>ok!</li>  
+        <li>ok!</li>
     </ul>
   </div>
   <div class="form-container">
@@ -194,5 +194,46 @@ function renderDocValidation(){
       <button class="form-button" type="button" onClick="changeToLimit(event)" href='/newuser/docvalidation'>Prosseguir</button>
     </form>
   </div>
+  `
+}
+
+function rederLimitAccount() {
+  return `
+  <div class="">
+    <div class="">
+      <i class="fas fa-check-circle"></i>
+      <p>A criação da sua conta foi aprovada!</p>
+    </div>
+    <p>Seu limite é de R$ ${value}</p>
+    <p>Crie seu acesso a conta:</p>
+    <form class="">
+      <label>E-mail</label>
+      <br>
+      <input type="email">
+      <br>
+      <label>Senha</label>
+      <br>
+      <input type="password">
+      <br>
+      <label>Confirmar Senha</label>
+      <br>
+      <input type="password">
+      <br>
+      <a onclick="sendNewUser()">Enviar</a>
+    </form>
+  </div>
+  `
+}
+function deniedAccount() {
+  return `
+    <div class="">
+      <div class="">
+        <i class="fas fa-times-circle"></i>
+        <p>A criação da conta foi negada.</p>
+      </div>
+      <p>Informe seu e-mail para que nossa equipe entre em contato para outra tentativa:</p>
+      <input type="email" placeholder="e-mail">
+      <button type="button" name="button">Enviar</button>
+    </div>
   `
 }
