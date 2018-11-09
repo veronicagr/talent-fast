@@ -51,9 +51,10 @@ function changeToDocValidation(event) {
 
 function changeToLimit(event) {
   event.preventDefault();
+  let numberCPF = $('#cpf').val();
+  calcLimit(numberCPF);
   page.redirect('/newuser/limit')
 }
-
 
 function cpfRequest(numberCPF) {
   let nCPF = numberCPF.replace(/\.|\-/g, '');
@@ -62,9 +63,23 @@ function cpfRequest(numberCPF) {
       if (snapshot.val().blacklist === true || snapshot.val().totalOcorrencias > 0) {
         console.log("não aprovado");
       } else {
-        console.log("Aprovado");
+        console.log("aprovado");
       }
-})
+    })
+}
+
+function calcLimit(numberCPF) {
+  let nCPF = numberCPF.replace(/\.|\-/g, '');
+  database.ref('/consultaCPF/' + nCPF).once('value')
+    .then(function(snapshot) {
+      if (snapshot.val().score > 0 && snapshot.val().score < 100) {
+        console.log("Seu limite é de R$ 500,00");
+      } else if (snapshot.val().score >= 100 && snapshot.val().score < 500) {
+        console.log("Seu limite é de R$ 2000,00");
+      } else if (snapshot.val().score >= 500 && snapshot.val().score <= 1000) {
+        console.log("Seu limite é de R$ 4000,00");
+      }
+    })
 }
 
 function format(mask, doc) {
