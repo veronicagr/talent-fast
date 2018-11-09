@@ -59,14 +59,12 @@ function cpfRequest(numberCPF) {
   let nCPF = numberCPF.replace(/\.|\-/g, '');
   database.ref('/consultaCPF/' + nCPF).once('value')
     .then(function(snapshot) {
-      console.log(snapshot.val())
-
-    .catch(error => handleError(error));
+      if (snapshot.val().blacklist === true || snapshot.val().totalOcorrencias > 0) {
+        console.log("não aprovado");
+      } else {
+        console.log("Aprovado");
+      }
 })
-}
-
-function handleError(event) {
-  console.log(event);
 }
 
 function format(mask, doc) {
