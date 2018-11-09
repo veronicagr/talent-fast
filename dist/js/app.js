@@ -72,10 +72,10 @@ function cpfRequest(numberCPF) {
   database.ref('/consultaCPF/' + nCPF).once('value')
     .then(function(snapshot) {
       if (snapshot.val().blacklist === true || snapshot.val().totalOcorrencias > 0) {
-        $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado! Por favor, tente em um outro momento!</h3>`);
+        $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado.</h3>`);
         setTimeout(() => {
           page.redirect('/newuser/refused');
-        },2000)
+        },2500)
       } else {
         $('#request-answer').append(`<h3 class="request-answer green">Consulta realizada, CPF aprovado!</h3>`);
         sessionStorage.setItem('CPF', nCPF);
