@@ -253,6 +253,9 @@ function deniedAccount() {
 function renderLogin() {
   return `
 <div class="form-container">
+<div id = 'iconFuncionario' >
+<i class="icon fas fa-lock"></i>
+</div>
   <h3>Login Funcionário</h3>
   <form>
     <label>E-mail: </label>
@@ -268,12 +271,11 @@ function renderLogin() {
 `
 }
 
-
-
 function renderLoginCliente() {
   return `
   <div class="form-container">
-    <h3>Login Cliente</h3>
+  <i id = "iconCliente" class="icon fas fa-user-lock"></i>
+  <h3>Login Cliente</h3>
     <form>
       <label>E-mail: </label>
       <br>
