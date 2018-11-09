@@ -8,10 +8,6 @@ function verifyCPF(event) {
     $('#cpf').before('<p style="color:red">CPF inválido</p>');
   } else {
     cpfRequest(numberCPF);
-    $('#request-answer').append(`<h3 class="request-answer">Consulta realizada, CPF aprovado!</h3>`);
-    setTimeout(() => {
-      page.redirect('/newuser/myinformations');
-    },2000)
 
   }
 }
@@ -70,8 +66,14 @@ function cpfRequest(numberCPF) {
     .then(function(snapshot) {
       if (snapshot.val().blacklist === true || snapshot.val().totalOcorrencias > 0) {
         console.log("não aprovado");
+        $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado! Por favor, tente em um outro momento!</h3>`);
       } else {
         console.log("Aprovado");
+        $('#request-answer').append(`<h3 class="request-answer green">Consulta realizada, CPF aprovado!</h3>`);
+        setTimeout(() => {
+          page.redirect('/newuser/myinformations');
+        },2000)
+    
       }
 })
 }

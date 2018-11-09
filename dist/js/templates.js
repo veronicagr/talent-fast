@@ -214,8 +214,8 @@ function renderLimitAccount() {
     <div class="">
       <i class="fas fa-check-circle"></i>
       <p class="align">Seus dados foram analisados e seu perfil foi aprovado!</p>
-      <p class="align">Você tem disponível um limite de R$ 3.000,00</p>
-      <p class="align">Para concluir a abertura de sua conta, finalize seu cadastro</p>
+      <p class="align">Você tem disponível um limite de R$ 3.000,00.</p>
+      <p class="align">Para concluir a abertura de sua conta, finalize seu cadastro.</p>
     </div>
     <form class="">
       <label>E-mail</label>
@@ -254,6 +254,9 @@ function deniedAccount() {
 function renderLogin() {
   return `
 <div class="form-container">
+<div id = 'iconFuncionario' >
+<i class="icon fas fa-lock"></i>
+</div>
   <h3>Login Funcionário</h3>
   <form>
     <label>E-mail: </label>
@@ -269,12 +272,11 @@ function renderLogin() {
 `
 }
 
-
-
 function renderLoginCliente() {
   return `
   <div class="form-container">
-    <h3>Login Cliente</h3>
+  <i id = "iconCliente" class="icon fas fa-user-lock"></i>
+  <h3>Login Cliente</h3>
     <form>
       <label>E-mail: </label>
       <br>

@@ -190,6 +190,13 @@ option {
 .request-answer {
   text-align: center;
   margin-top: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
   color: green;
 }
 
@@ -198,3 +205,10 @@ option {
   border: 1px solid lightgrey;
   border-radius: 2px;
 } */
+
+#iconCliente, #iconFuncionario{
+font-size: 80px;
+display: flex;
+justify-content: center;
+margin-bottom: 50px;  
+}
