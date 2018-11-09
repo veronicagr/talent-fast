@@ -19,12 +19,12 @@ a {
 
 .background {
   width: 100vw;
-  height: 100vh;  
+  height: 100vh;
   font-family: 'Inconsolata', monospace;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 15% 5% 80%;
-  grid-template-areas: 
+  grid-template-areas:
     "header"
     "navbar"
     "main";
@@ -61,7 +61,7 @@ a {
 }
 
 .nav-button {
-  background-color: rgb(32, 32, 32); 
+  background-color: rgb(32, 32, 32);
   padding: 4px;
   border-radius: 3px;
   width: 100px;
@@ -101,17 +101,24 @@ input {
 
 .form-container {
   width: 100%;
+<<<<<<< HEAD
+  margin-top: 15px;
+=======
   display: flex;
   flex-direction: column;
+>>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
 }
 
 .form-button {
-  background-color: rgb(32, 32, 32); 
+  background-color: rgb(32, 32, 32);
   padding: 10px;
   border-radius: 3px;
   font-size: 14px;
   width: 100%;
   border: none;
+<<<<<<< HEAD
+}
+=======
   margin-top: 20px;
 }
 
@@ -183,3 +190,4 @@ input {
   border: 1px solid lightgrey;
   border-radius: 2px;
 } */
+>>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270

@@ -29,7 +29,11 @@ function renderNewUser() {
         <br>
         <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
         <br>
+<<<<<<< HEAD
+        <a class="form-button" onclick="verifyCPF()">Consultar</a>
+=======
         <a class="form-button" type="button" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
+>>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
       </form>
     </div>
   `;
@@ -64,7 +68,15 @@ function renderMyInformations() {
         <br>
         <label>Celular: </label>
         <br>
+<<<<<<< HEAD
         <input type="text" maxlength="13" OnKeyPress="formatar('(##)####-####', this)">
+=======
+<<<<<<< HEAD
+        <input type="text" maxlength="13" OnKeyPress="format('##-####-####', this)">
+=======
+        <input type="text" maxlength="13" OnKeyPress="format('##-#####-####', this)">
+>>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
+>>>>>>> f5d57ddff0a0cd00f7b1b2c26d16fc0753f252b8
         <br>
         <label>RG: </label>
         <br>
@@ -148,7 +160,7 @@ function renderMyIncome() {
     <form>
       <label>Salário(R$): </label>
       <br>
-      <input type="text">
+      <input type="text" OnKeyPress="format('##,##', this)">
       <br>
       <label>Empresa: </label>
       <br>
@@ -173,7 +185,7 @@ function renderDocValidation() {
         <li class="active">endereço</li>
         <li class="active">trabalho</li>
         <li class="active">docs</li>
-        <li>ok!</li>  
+        <li>ok!</li>
     </ul>
   </div>
   <div class="form-container">
@@ -194,5 +206,46 @@ function renderDocValidation() {
       <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
     </form>
   </div>
+  `
+}
+
+function rederLimitAccount() {
+  return `
+  <div class="">
+    <div class="">
+      <i class="fas fa-check-circle"></i>
+      <p>A criação da sua conta foi aprovada!</p>
+    </div>
+    <p>Seu limite é de R$ ${value}</p>
+    <p>Crie seu acesso a conta:</p>
+    <form class="">
+      <label>E-mail</label>
+      <br>
+      <input type="email">
+      <br>
+      <label>Senha</label>
+      <br>
+      <input type="password">
+      <br>
+      <label>Confirmar Senha</label>
+      <br>
+      <input type="password">
+      <br>
+      <a onclick="sendNewUser()">Enviar</a>
+    </form>
+  </div>
+  `
+}
+function deniedAccount() {
+  return `
+    <div class="">
+      <div class="">
+        <i class="fas fa-times-circle"></i>
+        <p>A criação da conta foi negada.</p>
+      </div>
+      <p>Informe seu e-mail para que nossa equipe entre em contato para outra tentativa:</p>
+      <input type="email" placeholder="e-mail">
+      <button type="button" name="button">Enviar</button>
+    </div>
   `
 }
