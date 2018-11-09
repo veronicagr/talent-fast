@@ -21,7 +21,7 @@ function renderNewUser() {
     <div class="form-container">
       <h3>Junte-se a nós!</h3>
       <form class="#">
-        <label>Nomico: </label>
+        <label>Nome completo: </label>
         <br>
         <input type="text" name="Name" placeholder="">
         <br>
