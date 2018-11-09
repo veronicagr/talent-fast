@@ -31,7 +31,6 @@ function renderNewUser() {
         <br>
         <button class="form-button" type="button" placeholder="Submit" onclick="verifyCPF(event)">Consultar</button>
       </form>
-      <div id="request-answer"></div>
     </div>
   `;
 }
