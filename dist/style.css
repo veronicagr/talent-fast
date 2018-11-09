@@ -7,25 +7,27 @@
 
 body {
   margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
 }
 
 a {
   text-decoration: none;
   color: white;
+  font-size: 10px;
 }
 
 .background {
   width: 100vw;
-  height: 100vh;
+  height: 100vh;  
   font-family: 'Inconsolata', monospace;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 20% 20% 50% 10%;
+  grid-template-rows: 15% 5% 80%;
   grid-template-areas: 
     "header"
     "navbar"
-    "main"
-    "footer";
+    "main";
     justify-items: center;
     align-items: center;
 }
@@ -43,30 +45,30 @@ a {
   grid-area: navbar;
   display: flex;
   flex-direction: row;
-  justify-items: flex-start;
   align-self: flex-start;
-
+  justify-content: space-around;
 }
 
 .main {
   grid-area: main;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: 20px 0;
   font-size: 12px;
-
-}
-
-.footer {
-  grid-area: footer;
+  width: 80%;
 }
 
 .nav-button {
   background-color: rgb(32, 32, 32); 
-  padding: 10px;
+  padding: 4px;
   border-radius: 3px;
-  font-size: 14px;
-  width: 100%;
+  width: 100px;
+  margin: 0 5px;
+  text-align: center;
+  font-size: 9px;
+  padding: 7px;
 }
 
 .icon {
@@ -77,6 +79,8 @@ input {
   border-radius: 3px;
   border: 1px solid lightgrey;
   padding: 5px;
+  width: 100%;
+  margin: 5px 0 10px 0;
 }
 
 ::placeholder {
@@ -90,8 +94,13 @@ input {
 }
 
 .hr-header {
-  width: 80%;
-  border: 2px solid black;
+  width: 100%;
+  border: 1px solid black;
+  margin: 0;
+}
+
+.form-container {
+  width: 100%;
 }
 
 .form-button {
@@ -102,8 +111,4 @@ input {
   width: 100%;
   border: none;
   margin-top: 15px;
-}
-
-label {
-  margin-top: 5px;
 }
