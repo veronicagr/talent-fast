@@ -190,6 +190,13 @@ option {
 .request-answer {
   text-align: center;
   margin-top: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
   color: green;
 }
 

@@ -214,8 +214,8 @@ function renderLimitAccount() {
     <div class="">
       <i class="fas fa-check-circle"></i>
       <p class="align">Seus dados foram analisados e seu perfil foi aprovado!</p>
-      <p class="align">Você tem disponível um limite de R$ 3.000,00</p>
-      <p class="align">Para concluir a abertura de sua conta, finalize seu cadastro</p>
+      <p class="align">Você tem disponível um limite de R$ 3.000,00.</p>
+      <p class="align">Para concluir a abertura de sua conta, finalize seu cadastro.</p>
     </div>
     <form class="">
       <label>E-mail</label>
