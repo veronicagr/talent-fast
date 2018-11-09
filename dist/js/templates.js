@@ -21,7 +21,11 @@ function renderNewUser() {
     <div class="form-container">
       <h3>Junte-se a nós!</h3>
       <form class="#">
+<<<<<<< HEAD
         <label>Nome: </label>
+=======
+        <label>Nome completo: </label>
+>>>>>>> 26910cab58e35e01e1608172d110d3833b958413
         <br>
         <input type="text" name="Name" placeholder="">
         <br>
@@ -144,11 +148,11 @@ function renderMyIncome() {
     </ul>
   </div>
   <div class="form-container">
-    <p>Informe sua renda</p>
+    <p>Informe sua renda </p>
     <form>
       <label>Salário(R$): </label>
       <br>
-      <input type="text" OnKeyPress="format('##,##', this)">
+      <input type="text" OnKeyPress="format('####,##', this)">
       <br>
       <label>Empresa: </label>
       <br>
@@ -213,8 +217,8 @@ function renderLimitAccount() {
     <div class="">
       <i class="fas fa-check-circle"></i>
       <p class="align">Seus dados foram analisados e seu perfil foi aprovado!</p>
-      <p class="align">Você tem disponível um limite de R$ 3.000,00</p>
-      <p class="align">Para concluir a abertura de sua conta, finalize seu cadastro</p>
+      <p class="align">Você tem disponível um limite de R$ 3.000,00.</p>
+      <p class="align">Para concluir a abertura de sua conta, finalize seu cadastro.</p>
     </div>
     <form class="">
       <label>E-mail</label>
@@ -230,6 +234,7 @@ function renderLimitAccount() {
       <input type="password">
       <br>
       <button class="form-button" type="button" onClick="sendNewUser(event)">Cadastrar</button>
+      <div id="request-answer"></div>
     </form>
   </div>
   `

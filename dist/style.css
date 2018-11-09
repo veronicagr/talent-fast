@@ -190,6 +190,13 @@ option {
 .request-answer {
   text-align: center;
   margin-top: 20px;
+}
+
+.red {
+  color: red;
+}
+
+.green {
   color: green;
 }
 
@@ -204,4 +211,10 @@ font-size: 80px;
 display: flex;
 justify-content: center;
 margin-bottom: 50px;  
+}
+
+.login-link {
+  color:black;
+  text-decoration: underline;
+  font-size: 12px;
 }
