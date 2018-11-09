@@ -10,7 +10,17 @@
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-database.js"></script>
-    <script src="firebase-config.js"></script>
+    <script>
+    var config = {
+    apiKey: "AIzaSyC61Yd-SyCWXOGPmx2XPJB83IXApqRRQGM",
+    authDomain: "talent-fest-e8129.firebaseapp.com",
+    databaseURL: "https://talent-fest-e8129.firebaseio.com",
+    projectId: "talent-fest-e8129",
+    storageBucket: "talent-fest-e8129.appspot.com",
+    messagingSenderId: "20966954942"
+    };
+    firebase.initializeApp(config);
+    </script>
   </head>
   <body >
     <div class="background">
