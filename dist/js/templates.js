@@ -1,4 +1,4 @@
-function renderIndex(){
+function renderIndex() {
   return `
     <div class="#">
       <h2>Bem-vindo(a) ao Future Bank, abra a sua conta on-line e confie na gente para cuidar de seus investimentos.</h2>
@@ -6,7 +6,7 @@ function renderIndex(){
   `
 }
 
-function renderNewUser(){
+function renderNewUser() {
   return `
     <div class="form-container">
       <h3>Junte-se a nós</h3>
@@ -26,7 +26,7 @@ function renderNewUser(){
   `
 }
 
-function renderMyInformations(){
+function renderMyInformations() {
   return `
     <div class="form-container">
       <p>Complete seu cadastro</p>
@@ -37,7 +37,12 @@ function renderMyInformations(){
         <br>
         <label>Estado Civil: </label>
         <br>
-        <input type="text" placeholder="">
+        <select>
+        <option value="casado">CASADO(A)</option>
+        <option value="solteiro">SOLTEIRO(A)</option>
+        <option value="solteiro">DIVORCIADO(A)</option>
+        <option value="solteiro">OUTROS(A)</option>
+        </select>
         <br>
         <label>Celular: </label>
         <br>
@@ -60,8 +65,8 @@ function renderMyInformations(){
     </div>
   `
 }
-function renderMyAdress (){
-  return`
+function renderMyAdress() {
+  return `
   <div class="progress">point</div>
   <div class="form-container">
     <p>Meu Endereço</p>
