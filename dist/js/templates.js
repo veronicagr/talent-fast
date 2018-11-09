@@ -1,17 +1,25 @@
-function renderIndex(){
+function renderIndex() {
   return `
-    <div class="#">
+    <div class="welcome">
       <h2>Bem-vindo(a) ao Future Bank, abra a sua conta on-line e confie na gente para cuidar de seus investimentos.</h2>
     </div>
   `
 }
 
-function renderNewUser(){
+function renderNewUser() {
   return `
+    <div class="container">
+      <ul class="progressbar">
+          <li class="active">cpf</li>
+          <li>infos</li>
+          <li>endereço</li>
+          <li>trabalho</li>
+          <li>docs</li>
+      </ul>
+    </div>
     <div class="form-container">
       <h3>Junte-se a nós</h3>
       <form class="#">
-        <p>Crie sua conta</p>
         <label>Nome: </label>
         <br>
         <input type="text" name="Name" placeholder="Nome completo">
@@ -26,10 +34,19 @@ function renderNewUser(){
   `
 }
 
-function renderMyInformations(){
+function renderMyInformations() {
   return `
+    <div class="container">
+      <ul class="progressbar">
+          <li class="active">cpf</li>
+          <li>infos</li>
+          <li>endereço</li>
+          <li>trabalho</li>
+          <li>docs</li>
+          <li>ok!</li>    
+      </ul>
+    </div>
     <div class="form-container">
-      <p>Complete seu cadastro</p>
       <form class="#">
         <label>Nascimento: </label>
         <br>
@@ -37,7 +54,12 @@ function renderMyInformations(){
         <br>
         <label>Estado Civil: </label>
         <br>
-        <input type="text" placeholder="">
+        <select>
+        <option value="casado">CASADO(A)</option>
+        <option value="solteiro">SOLTEIRO(A)</option>
+        <option value="solteiro">DIVORCIADO(A)</option>
+        <option value="solteiro">OUTROS(A)</option>
+        </select>
         <br>
         <label>Celular: </label>
         <br>
@@ -62,9 +84,16 @@ function renderMyInformations(){
 }
 function renderMyAdress (){
   return`
-  <div class="progress">point</div>
+  <div class="container">
+    <ul class="progressbar">
+        <li class="active">cpf</li>
+        <li>infos</li>
+        <li>endereço</li>
+        <li>trabalho</li>
+        <li>docs</li>
+    </ul>
+  </div>
   <div class="form-container">
-    <p>Meu Endereço</p>
     <form class="#">
       <label>CEP: </label>
       <br>
