@@ -15,10 +15,11 @@ function renderNewUser() {
           <li>endereço</li>
           <li>trabalho</li>
           <li>docs</li>
+          <li>ok!</li>  
       </ul>
     </div>
     <div class="form-container">
-      <h3>Junte-se a nós</h3>
+      <h3>Junte-se a nós!</h3>
       <form class="#">
         <label>Nome: </label>
         <br>
@@ -39,7 +40,7 @@ function renderMyInformations() {
     <div class="container">
       <ul class="progressbar">
           <li class="active">cpf</li>
-          <li>infos</li>
+          <li class="active">infos</li>
           <li>endereço</li>
           <li>trabalho</li>
           <li>docs</li>
@@ -63,7 +64,7 @@ function renderMyInformations() {
         <br>
         <label>Celular: </label>
         <br>
-        <input type="number" maxlength="13" OnKeyPress="formatar('(##)####-####', this)">
+        <input type="text" maxlength="13" OnKeyPress="format('##-#####-####', this)">
         <br>
         <label>RG: </label>
         <br>
@@ -87,17 +88,18 @@ function renderMyAdress (){
   <div class="container">
     <ul class="progressbar">
         <li class="active">cpf</li>
-        <li>infos</li>
-        <li>endereço</li>
+        <li class="active">infos</li>
+        <li class="active">endereço</li>
         <li>trabalho</li>
         <li>docs</li>
+        <li>ok!</li>  
     </ul>
   </div>
   <div class="form-container">
     <form class="#">
       <label>CEP: </label>
       <br>
-      <input type="number" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)" onblur="verifyCPF(this)">
+      <input type="text" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)">
       <br>
       <label>Rua: </label>
       <br>
@@ -131,10 +133,20 @@ function renderMyAdress (){
 
 function renderMyIncome(){
   return `
-  <div>
+  <div class="container">
+    <ul class="progressbar">
+        <li class="active">cpf</li>
+        <li class="active">infos</li>
+        <li class="active">endereço</li>
+        <li class="active">trabalho</li>
+        <li>docs</li>
+        <li>ok!</li>  
+    </ul>
+  </div>
+  <div class="form-container">
     <p>Informe sua renda</p>
     <form>
-      <label>Salario(R$): </label>
+      <label>Salário(R$): </label>
       <br>
       <input type="text">
       <br>
