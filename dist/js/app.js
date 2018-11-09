@@ -2,10 +2,16 @@ const database = firebase.database();
 const USER_ID = localStorage.getItem("userId");
 
 $(document).ready(function() {
-  $(".sign-in-button").click(signInClick);
-  $(".register-link").click(showRegister);
-  $(".sign-up-button").click(signUpClick);
+  $("#login-button").click(loginClick);
+  $("#sign-up-button").click(signUpClick);
 });
+
+function signUpClick(event) {
+  event.preventDefault();
+  const email = $(".sign-up-email").val();
+  const password = $(".sign-up-password").val();
+  registerNewUser(email, password);
+}
 
 function verifyCPF(event) {
   event.preventDefault();

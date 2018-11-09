@@ -219,17 +219,17 @@ function renderLimitAccount() {
     <form class="">
       <label>E-mail</label>
       <br>
-      <input type="email">
+      <input class="sign-up-email" type="email">
       <br>
       <label>Senha</label>
       <br>
-      <input type="password">
+      <input class="sign-up-password" type="password">
       <br>
       <label>Confirmar Senha</label>
       <br>
       <input type="password">
       <br>
-      <button class="form-button" type="button" onClick="sendNewUser(event)">Cadastrar</button>
+      <button id="sign-up-button" class="form-button" type="button" onClick="sendNewUser(event)">Cadastrar</button>
       <div id="request-answer"></div>
     </form>
   </div>
@@ -285,7 +285,7 @@ function renderLoginCliente() {
       <label>Senha: </label>
       <br>
       <input type="password">
-      <button class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
+      <button id="login-button" class="form-button" type="button" onClick="changeToClientsSituation(event)">Entrar</button>
     </form>
   </div>
   `
