@@ -56,31 +56,18 @@ function changeToLimit(event) {
 
 
 function cpfRequest(numberCPF) {
-  // return fetch('https://talent-fest-e8129.firebaseio.com/consultaCPF.json')
-  //   .then(response => response.json())
-  //   .then(json => json)
-  database.ref('/consultaCPF/').once('value')
+  let nCPF = numberCPF.replace(/\.|\-/g, '');
+  database.ref('/consultaCPF/' + nCPF).once('value')
     .then(function(snapshot) {
-      snapshot.forEach(function(childSnapshot) {
-      let childKey = childSnapshot.key;
-      if (numberCPF === childKey) {
-        return numberCPF;
-      } return ("nao achou");
-      // console.log(cpfFilter);
-      // let childData = childSnapshot.val();
-      // console.log(childSnapshot.val());
-      // childSnapshot.forEach(function(d) {
-      //   movies.push(d.val())
-      // })
+      console.log(snapshot.val())
 
-    // .catch(error => handleError(error));
-})
+    .catch(error => handleError(error));
 })
 }
 
-// function handleError(event) {
-//   console.log(event);
-// }
+function handleError(event) {
+  console.log(event);
+}
 
 // function loadCPF(data) {
 //   $.each(data, function(index, value) {
