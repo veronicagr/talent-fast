@@ -1,41 +1,53 @@
-function renderIndex(){
+function renderIndex() {
   return `
-    <div class="#">
-      <p>Bem Vind@ ao Future Bank, abra a sua conta on-line e confie em nós para cuidar de seus investimentos.</p>
+    <div class="welcome">
+      <h2>Bem-vindo(a) ao Future Bank, abra a sua conta on-line e confie na gente para cuidar de seus investimentos.</h2>
     </div>
   `
 }
 
-function renderNewUser(){
+function renderNewUser() {
   return `
-    <div form-container>
-      <h3>Junte-se a nós</h3>
+    <div class="container">
+      <ul class="progressbar">
+          <li class="active">cpf</li>
+          <li>infos</li>
+          <li>endereço</li>
+          <li>trabalho</li>
+          <li>docs</li>
+          <li>ok!</li>  
+      </ul>
+    </div>
+    <div class="form-container">
+      <h3>Junte-se a nós!</h3>
       <form class="#">
-        <p>Crie sua conta</p>
         <label>Nome: </label>
         <br>
         <input type="text" name="Name" placeholder="Nome completo">
-<<<<<<< HEAD
         <br>
         <label>CPF: </label>
         <br>
-        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
+        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
         <br>
-        <button class="form-button" type="submit" placeholder="Submit"><a href="/newuser/myinformations">Consultar</a></button>
+        <a class="form-button" type="submit" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
       </form>
-=======
-        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="14" OnKeyPress="format('###.###.###-##', this)">
-        <button onclick="verifyCPF()" type="submit" value="Submit"><a href="/newuser/myinformations">Consultar</a></button>
-      </div>
->>>>>>> cd41a1c3876eab7036aa84652163df8751bef448
     </div>
   `
 }
 
-function renderMyInformations(){
+function renderMyInformations() {
   return `
+    <div class="container">
+      <ul class="progressbar">
+          <li class="active">cpf</li>
+          <li class="active">infos</li>
+          <li>endereço</li>
+          <li>trabalho</li>
+          <li>docs</li>
+          <li>ok!</li>    
+      </ul>
+    </div>
     <div class="form-container">
-      <p>Complete seu cadastro</p>
       <form class="#">
         <label>Nascimento: </label>
         <br>
@@ -43,11 +55,16 @@ function renderMyInformations(){
         <br>
         <label>Estado Civil: </label>
         <br>
-        <input type="text" placeholder="">
+        <select>
+        <option value="casado">CASADO(A)</option>
+        <option value="solteiro">SOLTEIRO(A)</option>
+        <option value="solteiro">DIVORCIADO(A)</option>
+        <option value="solteiro">OUTROS(A)</option>
+        </select>
         <br>
         <label>Celular: </label>
         <br>
-        <input type="number" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
+        <input type="text" maxlength="13" OnKeyPress="format('##-#####-####', this)">
         <br>
         <label>RG: </label>
         <br>
@@ -61,20 +78,28 @@ function renderMyInformations(){
         <br>
         <input type="text" placeholder="">
         <br>
-        <button class="form-button" type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
+        <a class="form-button" href='/newuser/myadress'>Prosseguir</a>
       </form>
     </div>
   `
 }
 function renderMyAdress (){
   return`
-  <div class="progress">point</div>
+  <div class="container">
+    <ul class="progressbar">
+        <li class="active">cpf</li>
+        <li class="active">infos</li>
+        <li class="active">endereço</li>
+        <li>trabalho</li>
+        <li>docs</li>
+        <li>ok!</li>  
+    </ul>
+  </div>
   <div class="form-container">
-    <p>Meu Endereço</p>
     <form class="#">
       <label>CEP: </label>
       <br>
-      <input type="number" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)" onblur="verifyCPF(this)">
+      <input type="text" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)">
       <br>
       <label>Rua: </label>
       <br>
@@ -100,8 +125,47 @@ function renderMyAdress (){
       <br>
       <input type="text">
       <br>
-      <button class="form-button" type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
+      <a class="form-button" href='/newuser/myincome'>Prosseguir</a>
     </form>
   </div>
+  `
+}
+
+function renderMyIncome(){
+  return `
+  <div class="container">
+    <ul class="progressbar">
+        <li class="active">cpf</li>
+        <li class="active">infos</li>
+        <li class="active">endereço</li>
+        <li class="active">trabalho</li>
+        <li>docs</li>
+        <li>ok!</li>  
+    </ul>
+  </div>
+  <div class="form-container">
+    <p>Informe sua renda</p>
+    <form>
+      <label>Salário(R$): </label>
+      <br>
+      <input type="text">
+      <br>
+      <label>Empresa: </label>
+      <br>
+      <input type="text">
+      <br>
+      <label>Cargo: </label>
+      <br>
+      <input type="text">
+      <br>
+      <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
+    </form>
+  </div>
+  `
+}
+
+function renderDocValidation(){
+  return`
+  
   `
 }
