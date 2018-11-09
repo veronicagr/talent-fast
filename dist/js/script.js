@@ -6,6 +6,7 @@ page('/newuser/myincome', myIncome);
 page('/newuser/docvalidation', docValidation);
 page('/newuser/limit', limitAccount);
 page('/login', loginUser);
+page('/useraccount', userAccount);
 page('/employees', loginEmployees);
 page('/employees/pending', pendingClient);
 page('/employees/approved', approvedClient);
@@ -13,11 +14,11 @@ page();
 
 $(document).ready(index);
 
-function index(){
+function index() {
   $("#main").html(renderIndex());
 }
 
-function newUser(){
+function newUser() {
   $("#main").html(renderNewUser());
 }
 
@@ -29,7 +30,7 @@ function myAdress() {
   $("#main").html(renderMyAdress());
 }
 
-function myIncome(){
+function myIncome() {
   $("#main").html(renderMyIncome());
 }
 
@@ -40,25 +41,33 @@ function docValidation() {
 function limitAccount() {
   //aproved??
   // if(aproved){
-    $("#main").html(rederLimitAccount());
+
+    $("#main").html(renderLimitAccount());
+
+
   // }else{
   //   $("#main").html(deniedAccount());
   // }
-
 }
 
 function loginUser() {
-  //retorna uma pagina para os clientes entrarem
+  $("#main").html(renderLoginCliente());
 }
 
 function loginEmployees() {
+  $("#main").html(renderLogin());
   //pagina de login de acesso ao gerente
 }
 
 function pendingClient() {
+  $("#main").html(renderLogin());
   //depois de ja logado a pagina exibe os clientes que estão pendentes para a aprovação
 }
 
 function approvedClient() {
   //retorna os clientes já aprovados pelo gerente
+}
+
+function userAccount() {
+  $("#main").html(renderUserAccount());  
 }

@@ -1,12 +1,17 @@
-function verifyCPF() {
+const database = firebase.database();
+
+function verifyCPF(event) {
+  event.preventDefault();
   let numberCPF = $('#cpf').val();
   let status = validarCpf(numberCPF);
   if (status === false) {
     $('#cpf').before('<p style="color:red">CPF inválido</p>');
   } else {
-    page.redirect('/newuser/myinformations');
+    cpfRequest(numberCPF);
+
   }
 }
+
 const validarCpf = input => {
   const cpf = input.replace(/\D/g, '');
   if (cpf === '' || cpf.length !== 11 || !/^\d{11}$/.test(cpf)) {
@@ -27,40 +32,68 @@ const validarCpf = input => {
     }
   }
   return true;
-};
-
-function cpfRequest() {
-  return fetch('https://talent-fest-e8129.firebaseio.com/consultaCPF.json')
-    .then(response => response.json())
-    .then(json => json)
-    .catch(error => handleError(error));
-};
-
-function loadCPF(data) {
-  $.each(data, function(index, value) {
-
-  });
 }
 
+function changeToAdressForm(event) {
+  event.preventDefault();
+  page.redirect('/newuser/myadress')
+}
 
-// function cpfRequest() {
-//   const url = 'https://raw.githubusercontent.com/adrianosferreira/afrodite.json/master/afrodite.json';
-//
-//   $.ajax({
-//     type: 'GET',
-//     dataType: 'json',
-//     url,
-//     success: loadCPF,
-//     error
-//   });
-// }
-//
-// function loadCPF(data) {
-//   $.each(data, function(index, value) {
-//     nameRecipe = data[index].nome;
-//     idRecipe = data[index]._id['$oid'];
-//     showAllRecipes();
-//   });
+function changeToIncome(event) {
+  event.preventDefault();
+  page.redirect('/newuser/myincome')
+}
+
+function changeToDocValidation(event) {
+  event.preventDefault();
+  page.redirect('/newuser/docvalidation')
+}
+
+function changeToLimit(event) {
+  event.preventDefault();
+  let numberCPF = $('#cpf').val();
+  console.log(numberCPF);
+  // calcLimit(numberCPF);
+  page.redirect('/newuser/limit')
+}
+
+function changeToClientsSituation(event) {
+  event.preventDefault();
+  page.redirect('/useraccount')
+}
+
+function cpfRequest(numberCPF) {
+  let nCPF = numberCPF.replace(/\.|\-/g, '');
+  database.ref('/consultaCPF/' + nCPF).once('value')
+    .then(function(snapshot) {
+      if (snapshot.val().blacklist === true || snapshot.val().totalOcorrencias > 0) {
+        console.log("não aprovado");
+        $('#request-answer').append(`<h3 class="request-answer red">Consulta realizada. Infelizmente, seu CPF não foi aprovado! Por favor, tente em um outro momento!</h3>`);
+      } else {
+        console.log("Aprovado");
+        $('#request-answer').append(`<h3 class="request-answer green">Consulta realizada, CPF aprovado!</h3>`);
+        setTimeout(() => {
+          page.redirect('/newuser/myinformations');
+        },2000)
+    
+        console.log("aprovado");
+      }
+    })
+}
+
+// function calcLimit(numberCPF) {
+//   console.log('calcLimit' + numberCPF);
+//   let nCPF = numberCPF.replace(/\.|\-/g, '');
+//   database.ref('/consultaCPF/' + nCPF).once('value')
+//     .then(function(snapshot) {
+//       if (snapshot.val().score > 0 && snapshot.val().score < 100) {
+//         console.log("Seu limite é de R$ 500,00");
+//       } else if (snapshot.val().score >= 100 && snapshot.val().score < 500) {
+//         console.log("Seu limite é de R$ 2000,00");
+//       } else if (snapshot.val().score >= 500 && snapshot.val().score <= 1000) {
+//         console.log("Seu limite é de R$ 4000,00");
+//       }
+//     })
 // }
 
 function format(mask, doc) {
@@ -71,4 +104,9 @@ function format(mask, doc) {
   if (txt.substring(0,1) != out){
       doc.value += txt.substring(0,1);
   }
+}
+
+function sendNewUser(event) {
+  event.preventDefault();
+  $('#request-answer').append(`<h3 class="request-answer">Cadastro efetuado! Faça <a href="/login" class="login-link">login</a></h3>`);  
 }
