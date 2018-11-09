@@ -52,6 +52,7 @@ function changeToDocValidation(event) {
 function changeToLimit(event) {
   event.preventDefault();
   let numberCPF = $('#cpf').val();
+  console.log(numberCPF);
   calcLimit(numberCPF);
   page.redirect('/newuser/limit')
 }
@@ -69,6 +70,7 @@ function cpfRequest(numberCPF) {
 }
 
 function calcLimit(numberCPF) {
+  console.log('calcLimit' + numberCPF);
   let nCPF = numberCPF.replace(/\.|\-/g, '');
   database.ref('/consultaCPF/' + nCPF).once('value')
     .then(function(snapshot) {
