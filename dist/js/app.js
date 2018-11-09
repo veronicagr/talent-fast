@@ -1,3 +1,6 @@
+
+const database = firebase.database();
+
 function verifyCPF(event) {
   event.preventDefault();
   let numberCPF = $('#cpf').val();
@@ -5,6 +8,7 @@ function verifyCPF(event) {
   if (status === false) {
     $('#cpf').before('<p style="color:red">CPF inválido</p>');
   } else {
+    cpfRequest(numberCPF);
     page.redirect('/newuser/myinformations');
   }
 }
@@ -32,56 +36,56 @@ const validarCpf = input => {
 
 function changeToAdressForm(event) {
   event.preventDefault();
-  page.redirect('/newuser/myadress')  
+  page.redirect('/newuser/myadress')
 }
 
 function changeToIncome(event) {
   event.preventDefault();
-  page.redirect('/newuser/myincome')  
+  page.redirect('/newuser/myincome')
 }
 
 function changeToDocValidation(event) {
   event.preventDefault();
-  page.redirect('/newuser/docvalidation')  
+  page.redirect('/newuser/docvalidation')
 }
 
 function changeToLimit(event) {
   event.preventDefault();
-  page.redirect('/newuser/limit')  
+  page.redirect('/newuser/limit')
 }
 
-function cpfRequest() {
-  return fetch('https://talent-fest-e8129.firebaseio.com/consultaCPF.json')
-    .then(response => response.json())
-    .then(json => json)
+
+function cpfRequest(numberCPF) {
+  // return fetch('https://talent-fest-e8129.firebaseio.com/consultaCPF.json')
+  //   .then(response => response.json())
+  //   .then(json => json)
+  database.ref('/consultaCPF/').once('value')
+    .then(function(snapshot) {
+      snapshot.forEach(function(childSnapshot) {
+      let childKey = childSnapshot.key;
+      console.log(childSnapshot.key);
+      let childData = childSnapshot.val();
+      console.log(childSnapshot.val());
+      // childSnapshot.forEach(function(d) {
+      //   movies.push(d.val())
+      // })
+      });
+    })
+
     .catch(error => handleError(error));
 };
 
+<<<<<<< HEAD
+
+function handleError(event) {
+  console.log(event);
+=======
 function loadCPF(data) {
   $.each(data, function(index, value) {
   });
+>>>>>>> ce5b25e38fc9cb76a3bbf3d369be4ac0b6695a4f
 }
 
-
-// function cpfRequest() {
-//   const url = 'https://raw.githubusercontent.com/adrianosferreira/afrodite.json/master/afrodite.json';
-//
-//   $.ajax({
-//     type: 'GET',
-//     dataType: 'json',
-//     url,
-//     success: loadCPF,
-//     error
-//   });
-// }
-//
-// function loadCPF(data) {
-//   $.each(data, function(index, value) {
-//     nameRecipe = data[index].nome;
-//     idRecipe = data[index]._id['$oid'];
-//     showAllRecipes();
-//   });
-// }
 
 function format(mask, doc) {
   let i = doc.value.length;
