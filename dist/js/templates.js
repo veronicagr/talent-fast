@@ -63,7 +63,7 @@ function renderMyInformations() {
         <br>
         <label>Celular: </label>
         <br>
-        <input type="number" maxlength="13" OnKeyPress="formatar('(##)####-####', this)">
+        <input type="text" maxlength="13" OnKeyPress="formatar('(##)####-####', this)">
         <br>
         <label>RG: </label>
         <br>
@@ -97,7 +97,7 @@ function renderMyAdress() {
     <form class="#">
       <label>CEP: </label>
       <br>
-      <input type="number" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)" onblur="verifyCPF(this)">
+      <input type="text" name="cep" maxlength="9" OnKeyPress="format('#####-###', this)">
       <br>
       <label>Rua: </label>
       <br>
