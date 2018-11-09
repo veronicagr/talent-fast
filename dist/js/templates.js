@@ -1,14 +1,14 @@
 function renderIndex(){
   return `
     <div class="#">
-      <p>Bem Vind@ ao Future Bank, abra a sua conta on-line e confie em nós para cuidar de seus investimentos.</p>
+      <h2>Bem-vindo(a) ao Future Bank, abra a sua conta on-line e confie na gente para cuidar de seus investimentos.</h2>
     </div>
   `
 }
 
 function renderNewUser(){
   return `
-    <div form-container>
+    <div class="form-container">
       <h3>Junte-se a nós</h3>
       <form class="#">
         <p>Crie sua conta</p>
