@@ -30,11 +30,11 @@ function myAdress() {
 }
 
 function myIncome(){
-  event.preventDefault();
+  $("#main").html(renderMyIncome());
 }
 
 function docValidation() {
-  //validação do documento com foto
+  $("#main").html(rederDocValidation());
 }
 
 function limitAccount() {
