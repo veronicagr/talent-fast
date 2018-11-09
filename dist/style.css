@@ -101,7 +101,12 @@ input {
 
 .form-container {
   width: 100%;
+<<<<<<< HEAD
   margin-top: 15px;
+=======
+  display: flex;
+  flex-direction: column;
+>>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
 }
 
 .form-button {
@@ -111,4 +116,78 @@ input {
   font-size: 14px;
   width: 100%;
   border: none;
+<<<<<<< HEAD
 }
+=======
+  margin-top: 20px;
+}
+
+.welcome {
+  text-align: center;
+}
+
+.container {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.progressbar {
+  margin: 0;
+  padding: 0;
+  counter-reset: step;
+}
+.progressbar li {
+  list-style-type: none;
+  width: 16%;
+  float: left;
+  font-size: 10px;
+  position: relative;
+  text-align: center;
+  text-transform: uppercase;
+  color: #7d7d7d;
+}
+.progressbar li:before {
+  width: 30px;
+  height: 30px;
+  content: counter(step);
+  counter-increment: step;
+  line-height: 30px;
+  border: 2px solid #7d7d7d;
+  display: block;
+  text-align: center;
+  margin: 0 auto 10px auto;
+  border-radius: 50%;
+  background-color: white;
+}
+.progressbar li:after {
+  width: 100%;
+  height: 2px;
+  content: '';
+  position: absolute;
+  background-color: #7d7d7d;
+  top: 15px;
+  left: -50%;
+  z-index: -1;
+}
+.progressbar li:first-child:after {
+  content: none;
+}
+.progressbar li.active {
+  color: green;
+}
+.progressbar li.active:before {
+  border-color: #55b776;
+}
+.progressbar li.active + li:after {
+  background-color: #55b776;
+}
+
+.align {
+  text-align: center;
+}
+
+/* add-image {
+  background-color: lightgrey;
+  border: 1px solid lightgrey;
+  border-radius: 2px;
+} */
+>>>>>>> ebe3b78b7c4df90b68a08d95d647d70363a9f270
