@@ -116,6 +116,11 @@ function changeToClientsSituation(event) {
   page.redirect('/useraccount');
 }
 
+function changeToManagerPage(event){
+  event.preventDefault();
+  page.redirect('/employees/pending');
+}
+
 function cpfRequest(numberCPF) {
   let nCPF = numberCPF.replace(/\.|\-/g, '');
   database.ref('/consultaCPF/' + nCPF).once('value')
@@ -151,7 +156,11 @@ function calcLimit(numberCPF) {
 function refused() {
   database.ref('/refused/').once('value')
     .then(function(snapshot) {
-      return snapshot.val();
+        let userMap = snapshot.val();
+        let users = Object.keys(userMap).map(k => {
+          return {cpf: k, ...userMap[k]};
+        });
+        $("#main").html(renderPendingClient(users));
     });
 }
 

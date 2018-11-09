@@ -9,7 +9,7 @@ page('/newuser/limit', limitAccount);
 page('/login', loginUser);
 page('/useraccount', userAccount);
 page('/employees', loginEmployees);
-page('/employees/pending', pendingClient);
+page('/employees/pending', refused);
 page('/employees/approved', approvedClient);
 page();
 
@@ -52,10 +52,6 @@ function loginUser() {
 }
 
 function loginEmployees() {
-  $("#main").html(renderLogin());
-}
-
-function pendingClient() {
   $("#main").html(renderLogin());
 }
 
