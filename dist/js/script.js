@@ -13,11 +13,11 @@ page();
 
 $(document).ready(index);
 
-function index(){
+function index() {
   $("#main").html(renderIndex());
 }
 
-function newUser(){
+function newUser() {
   $("#main").html(renderNewUser());
 }
 
@@ -29,7 +29,7 @@ function myAdress() {
   $("#main").html(renderMyAdress());
 }
 
-function myIncome(){
+function myIncome() {
   $("#main").html(renderMyIncome());
 }
 
@@ -40,14 +40,17 @@ function docValidation() {
 function limitAccount() {
   //aproved??
   // if(aproved){
+
     $("#main").html(renderLimitAccount());
+
+
   // }else{
   //   $("#main").html(deniedAccount());
   // }
 }
 
 function loginUser() {
-  //retorna uma pagina para os clientes entrarem
+  $("#main").html(renderLoginCliente());
 }
 
 function loginEmployees() {
