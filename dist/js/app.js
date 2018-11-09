@@ -1,4 +1,3 @@
-
 const database = firebase.database();
 
 function verifyCPF(event) {
@@ -64,22 +63,32 @@ function cpfRequest(numberCPF) {
     .then(function(snapshot) {
       snapshot.forEach(function(childSnapshot) {
       let childKey = childSnapshot.key;
-      console.log(childSnapshot.key);
-      let childData = childSnapshot.val();
-      console.log(childSnapshot.val());
+      if (numberCPF === childKey) {
+        return numberCPF;
+      } return ("nao achou");
+      // console.log(cpfFilter);
+      // let childData = childSnapshot.val();
+      // console.log(childSnapshot.val());
       // childSnapshot.forEach(function(d) {
       //   movies.push(d.val())
       // })
-      });
-    })
 
-    .catch(error => handleError(error));
-};
+    // .catch(error => handleError(error));
+})
+})
+}
 
+<<<<<<< HEAD
 
 // function handleError(event) {
 //   console.log(event);
 // =======
+=======
+// function handleError(event) {
+//   console.log(event);
+// }
+
+>>>>>>> 4b8667e3e3e5df22d9ca284c7c5c2d93791907b3
 // function loadCPF(data) {
 //   $.each(data, function(index, value) {
 //   });
