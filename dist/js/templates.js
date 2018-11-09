@@ -77,7 +77,7 @@ function renderMyInformations() {
         <br>
         <input type="text" placeholder="">
         <br>
-        <button class="form-button" type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
+        <a class="form-button" href='/newuser/myadress'>Prosseguir</a>
       </form>
     </div>
   `
@@ -123,8 +123,37 @@ function renderMyAdress() {
       <br>
       <input type="text">
       <br>
-      <button class="form-button" type="submit" name="button"><a href='/newuser/myadress'>Prosseguir</a></button>
+      <a class="form-button" href='/newuser/myincome'>Prosseguir</a>
     </form>
   </div>
+  `
+}
+
+function renderMyIncome() {
+  return `
+  <div>
+    <p>Informe sua renda</p>
+    <form>
+      <label>Salario(R$): </label>
+      <br>
+      <input type="text">
+      <br>
+      <label>Empresa: </label>
+      <br>
+      <input type="text">
+      <br>
+      <label>Cargo: </label>
+      <br>
+      <input type="text">
+      <br>
+      <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
+    </form>
+  </div>
+  `
+}
+
+function renderDocValidation() {
+  return `
+  
   `
 }
