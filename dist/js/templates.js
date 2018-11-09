@@ -231,6 +231,7 @@ function renderLimitAccount() {
       <input type="password">
       <br>
       <button class="form-button" type="button" onClick="sendNewUser(event)">Cadastrar</button>
+      <div id="request-answer"></div>
     </form>
   </div>
   `
