@@ -18,9 +18,9 @@ function renderNewUser(){
         <br>
         <label>CPF: </label>
         <br>
-        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
+        <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
         <br>
-        <button class="form-button" type="submit" placeholder="Submit"><a href="/newuser/myinformations">Consultar</a></button>
+        <a class="form-button" type="submit" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
       </form>
     </div>
   `
@@ -41,7 +41,7 @@ function renderMyInformations(){
         <br>
         <label>Celular: </label>
         <br>
-        <input type="number" maxlength="12" OnKeyPress="formatar('##-####-####', this)">
+        <input type="number" maxlength="13" OnKeyPress="formatar('(##)####-####', this)">
         <br>
         <label>RG: </label>
         <br>
