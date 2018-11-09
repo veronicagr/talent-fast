@@ -78,14 +78,21 @@ function cpfRequest(numberCPF) {
 })
 }
 
-// function handleError(event) {
-//   console.log(event);
-// }
+// <<<<<<< HEAD
 
-// function loadCPF(data) {
-//   $.each(data, function(index, value) {
-//   });
-// }
+// // function handleError(event) {
+// //   console.log(event);
+// // =======
+// =======
+// // function handleError(event) {
+// //   console.log(event);
+// // }
+
+// >>>>>>> 4b8667e3e3e5df22d9ca284c7c5c2d93791907b3
+// // function loadCPF(data) {
+// //   $.each(data, function(index, value) {
+// //   });
+// // }
 
 
 function format(mask, doc) {
