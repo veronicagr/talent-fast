@@ -29,7 +29,7 @@ function renderNewUser() {
         <br>
         <input id="cpf" type="text" name="CPF" placeholder="CPF" maxlength="15" OnKeyPress="format('###.###.###-##', this)">
         <br>
-        <a class="form-button" type="submit" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
+        <a class="form-button" type="button" placeholder="Submit" onclick="verifyCPF()">Consultar</a>
       </form>
     </div>
   `;
@@ -164,8 +164,35 @@ function renderMyIncome() {
   `;
 }
 
-function renderDocValidation() {
-  return `
-
-  `;
+function renderDocValidation(){
+  return`
+  <div class="container">
+    <ul class="progressbar">
+        <li class="active">cpf</li>
+        <li class="active">infos</li>
+        <li class="active">endereço</li>
+        <li class="active">trabalho</li>
+        <li class="active">docs</li>
+        <li>ok!</li>  
+    </ul>
+  </div>
+  <div class="form-container">
+    <p class="align">Para que validemos suas informações solicitamos que fotografe seus documentos em ambientes iluminados e fora do plástico de proteção. Além disso, pedimos que nos envie uma selfie com um de seus documentos em mãos.</p>
+    <form>
+      <label>RG: </label>
+      <br>
+      <input class="add-image" type="file" accept="image/*" capture="camera" value=""/>
+      <br>
+      <label>CPF: </label>
+      <br>
+      <input class="add-image" type="file" accept="image/*" capture="camera" value=""/>
+      <br>
+      <label>Selfie com documento: </label>
+      <br>
+      <input class="add-image" type="file" accept="image/*" capture="camera" value=""/>
+      <br>
+      <a class="form-button" href='/newuser/docvalidation'>Prosseguir</a>
+    </form>
+  </div>
+  `
 }
